@@ -56,8 +56,8 @@ const PizzaDetails = () => {
     }
   }, [dispatch, pizza]);
 
-  const addToCartHandler = () => {
-    dispatch(addToCart(pizza));
+  const addToCartHandler = (selectedPizza) => {
+    dispatch(addToCart(selectedPizza));
   };
 
   return (
@@ -160,7 +160,7 @@ const PizzaDetails = () => {
                                 padding: "0.5rem 1rem",
                                 fontSize: "0.8rem",
                               }} // Adjust button size
-                              onClick={addToCartHandler}
+                              onClick={() => addToCartHandler(p)}
                             >
                               Add to Cart{" "}
                               <i className="fas fa-shopping-cart me-1"></i>
