@@ -1,3 +1,3 @@
-const API_URL = "http://localhost:3500";
+const API_URL = "https://pizzarush-api.onrender.com";
 
 export default API_URL;
