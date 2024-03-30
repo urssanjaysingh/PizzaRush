@@ -148,7 +148,6 @@ const CartScreen = () => {
                         <div className="row">
                           <div className="col-md-3 d-flex align-items-center justify-content-center">
                             <img
-                              style={{ paddingLeft: "3px" }}
                               src={process.env.PUBLIC_URL + pizza.image}
                               className="img-fluid rounded-start"
                               alt={pizza.name}
