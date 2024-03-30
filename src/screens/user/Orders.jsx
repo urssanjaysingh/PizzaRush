@@ -16,7 +16,6 @@ const Orders = () => {
       try {
         const response = await dispatch(getUserOrders());
         setOrders(response.orders);
-        console.log(response.orders);
         setLoading(false);
       } catch (error) {
         console.error("Error:", error);
