@@ -17,12 +17,13 @@ const Pizza = ({ pizza }) => {
         style={{ width: "18rem" }}
       >
         <Link to={`/pizza/${pizza._id}`} style={{ textDecoration: "none" }}>
-          <img
-            className="card-img-top product-image"
-            src={pizza.image}
-            alt="Card"
-            style={{ height: "180px" }}
-          />
+          <div className="square-container">
+            <img
+              className="card-img-top product-image"
+              src={pizza.image}
+              alt="Card"
+            />
+          </div>
         </Link>
         <div className="card-body">
           <div className="product-info d-flex align-items-center justify-content-between">
