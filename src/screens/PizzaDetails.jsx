@@ -79,10 +79,7 @@ const PizzaDetails = () => {
           ) : (
             <>
               <div className="row product mt-4 mb-4">
-                <div
-                  className="col-md-6"
-                  style={{ height: "640px", width: "640px" }}
-                >
+                <div className="col-md-6" style={{ width: "28rem" }}>
                   <img
                     src={pizza.image}
                     className="img-fluid"
@@ -129,6 +126,7 @@ const PizzaDetails = () => {
                             className="card-img-top product-image"
                             src={p.image}
                             alt="Card"
+                            style={{ cursor: "pointer" }}
                             onClick={handleShow}
                           />
                         </div>
@@ -174,12 +172,12 @@ const PizzaDetails = () => {
           <Offcanvas.Title>About</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <div>
+          <div className="square-container">
             <img
               className="card-img-top product-image"
               src={pizza.image}
               alt="Card"
-              style={{ height: "180px", cursor: "pointer" }}
+              style={{ cursor: "pointer" }}
             />
           </div>
           <div>

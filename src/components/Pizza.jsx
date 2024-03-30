@@ -22,6 +22,7 @@ const Pizza = ({ pizza }) => {
               className="card-img-top product-image"
               src={pizza.image}
               alt="Card"
+              style={{ cursor: "pointer" }}
             />
           </div>
         </Link>
