@@ -98,7 +98,8 @@ body {
 .hero-section {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(/public/images/pizza-cover.jpg);
-  background-size: cover;
+  background-size: contain;
+  background-position: center;
   transition: transform 0.5s ease-in-out;
 }
 
