@@ -79,7 +79,10 @@ const PizzaDetails = () => {
           ) : (
             <>
               <div className="row product mt-4 mb-4">
-                <div className="col-md-6" style={{ maxWidth: "100%" }}>
+                <div
+                  className="col-md-6"
+                  style={{ height: "640px", width: "640px" }}
+                >
                   <img
                     src={pizza.image}
                     className="img-fluid"
@@ -119,13 +122,14 @@ const PizzaDetails = () => {
                         className="card product-card m-2 bg-light"
                         style={{ width: "18rem" }}
                       >
-                        <img
-                          className="card-img-top product-image"
-                          src={p.image}
-                          alt="Card"
-                          style={{ height: "180px" }}
-                          onClick={handleShow}
-                        />
+                        <div className="square-container">
+                          <img
+                            className="card-img-top product-image"
+                            src={p.image}
+                            alt="Card"
+                            onClick={handleShow}
+                          />
+                        </div>
                         <div className="card-body">
                           <div className="product-info d-flex align-items-center justify-content-between">
                             <h5 className="card-title product-title">
