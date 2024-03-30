@@ -177,15 +177,15 @@ const AdminOrders = () => {
                               <div className="col-md-3 d-flex align-items-center justify-content-center">
                                 <img
                                   src={
-                                    p.predefined
+                                    p.predefined && p.pizza
                                       ? p.pizza.image
-                                      : p.customPizza.image
+                                      : p.customPizza && p.customPizza.image
                                   }
                                   className="img-fluid rounded-start"
                                   alt={
-                                    p.predefined
+                                    p.predefined && p.pizza
                                       ? p.pizza.name
-                                      : p.customPizza.name
+                                      : p.customPizza && p.customPizza.name
                                   }
                                 />
                               </div>
@@ -197,9 +197,10 @@ const AdminOrders = () => {
                                       : p.customPizza.name}
                                   </p>
                                   <p className="product-description">
-                                    {p.predefined
+                                    {p.predefined && p.pizza
                                       ? p.pizza.description
-                                      : p.customPizza.description}
+                                      : p.customPizza &&
+                                        p.customPizza.description}
                                   </p>
                                   <p
                                     style={{
@@ -211,18 +212,18 @@ const AdminOrders = () => {
                                       Quantity: {p.quantity} &nbsp; &nbsp;{" "}
                                     </span>
                                     <span style={{ color: "salmon" }}>
-                                      Price: ₹
-                                      {p.predefined
+                                      {p.predefined && p.pizza
                                         ? p.pizza.price
-                                        : p.customPizza.price}{" "}
+                                        : p.customPizza && p.customPizza.price}
                                       &nbsp; &nbsp;{" "}
                                     </span>
                                     <span style={{ color: "tomato" }}>
                                       Total: ₹
                                       {p.quantity *
-                                        (p.predefined
+                                        (p.predefined && p.pizza
                                           ? p.pizza.price
-                                          : p.customPizza.price)}
+                                          : p.customPizza &&
+                                            p.customPizza.price)}
                                     </span>
                                   </p>
                                 </div>
