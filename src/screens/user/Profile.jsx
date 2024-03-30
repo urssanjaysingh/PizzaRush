@@ -6,12 +6,15 @@ import { updateUserProfile } from "../../actions/userAction";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PulseLoader from "react-spinners/PulseLoader";
+import { useNavigate } from "react-router-dom";
 
 const Profile = () => {
   const currentUser = useSelector(
     (state) => state.loginUserReducer.currentUser
   );
+
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const [name, setName] = useState(currentUser?.user?.name || "");
   const [email] = useState(currentUser?.user?.email || ""); // Email cannot be edited
@@ -75,6 +78,10 @@ const Profile = () => {
 
       if (updatedUser) {
         toast.success("Profile Updated Successfully");
+        const { state } = window.location;
+        if (state && state.from === "/cart") {
+          navigate("/cart");
+        }
       } else {
         toast.error("Failed to update profile. Please try again.");
       }
