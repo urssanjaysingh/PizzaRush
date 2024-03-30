@@ -35,10 +35,13 @@ const CustomPizzaModal = ({ show, handleClose, customPizzaData }) => {
       name: "Custom Pizza",
       category: "custom",
       price: 199,
-      image: "/images/pizza3.png",
-      description: `Custom pizza with Base: ${pizzaBase}, Sauce: ${pizzaSauce}, Cheese: ${cheeseType}, and Veggies: ${selectedVeggies.join(
-        ", "
-      )}`,
+      image: "/images/pizza_logo.png",
+      description: `Custom pizza with the following toppings:
+  - Base: ${pizzaBase}
+  - Sauce: ${pizzaSauce}
+  - Cheese: ${cheeseType}
+  - Veggies: 
+    - ${selectedVeggies.join(", ")}`,
     };
 
     // Dispatch action to add to cart

@@ -47,12 +47,13 @@ const Pizzas = () => {
                   className="product-link"
                 >
                   <div className="card m-2" style={{ width: "18rem" }}>
-                    <img
-                      src={pizza.image}
-                      className="card-img-top"
-                      style={{ height: "180px" }}
-                      alt={pizza.name}
-                    />
+                    <div className="square-container">
+                      <img
+                        className="card-img-top product-image"
+                        src={pizza.image}
+                        alt="Card"
+                      />
+                    </div>
                     <div className="card-body">
                       <h5 className="card-title">{pizza.name}</h5>
                       {/* <p className="card-text">{pizza.description}</p> */}
