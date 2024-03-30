@@ -165,7 +165,10 @@ const CartScreen = () => {
                               >
                                 {pizza.name}
                               </p>
-                              <p className="product-description text-justify">
+                              <p
+                                className="product-description"
+                                style={{ textAlign: "justify" }}
+                              >
                                 {pizza.description}
                               </p>
                               <div className="quantity-controls">

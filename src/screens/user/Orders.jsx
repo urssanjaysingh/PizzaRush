@@ -117,7 +117,10 @@ const Orders = () => {
                                       ? p.pizza.name
                                       : p.customPizza && p.customPizza.name}
                                   </p>
-                                  <p className="product-description text-justify">
+                                  <p
+                                    className="product-description"
+                                    style={{ textAlign: "justify" }}
+                                  >
                                     {p.predefined && p.pizza
                                       ? p.pizza.description
                                       : p.customPizza &&
