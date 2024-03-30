@@ -68,16 +68,21 @@ const HomeScreen = () => {
                     <h1 className="text-uppercase fw-bold text-white mb-3">
                       Welcome to Pizzarush
                     </h1>
-                    <p className="mb-4">
-                      Satisfy your pizza cravings with PizzaRush! Explore our
-                      delicious pizza varieties, discover amazing offers, and
+                    <p className="mb-4" style={{ textAlign: "justify" }}>
+                      Indulge in a delightful culinary journey with PizzaRush!
+                      Satisfy your pizza cravings with our mouthwatering
+                      selection of artisanal pizzas crafted with the finest
+                      ingredients. Explore our extensive menu featuring a
+                      variety of delectable pizza varieties, from classic
+                      Margherita to exotic Hawaiian. With our user-friendly
+                      ordering platform and efficient delivery service, you can
                       order with confidence at PizzaRush, your go-to pizza
-                      destination.
+                      destination for every occasion.
                     </p>
                   </div>
                 </div>
               </div>
-              <Button className="btn-sm product-button" onClick={openModal}>
+              <Button className="btn product-button" onClick={openModal}>
                 Craft Your Pizza
               </Button>
               <CustomPizzaModal
