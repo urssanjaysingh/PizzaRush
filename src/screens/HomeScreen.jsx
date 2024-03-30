@@ -68,16 +68,14 @@ const HomeScreen = () => {
                     <h1 className="text-uppercase fw-bold text-white mb-3">
                       Welcome to Pizzarush
                     </h1>
-                    <p className="mb-4" style={{ textAlign: "justify" }}>
+                    <p className="mb-4">
                       Indulge in a delightful culinary journey with PizzaRush!
                       Satisfy your pizza cravings with our mouthwatering
                       selection of artisanal pizzas crafted with the finest
-                      ingredients. Explore our extensive menu featuring a
-                      variety of delectable pizza varieties, from classic
-                      Margherita to exotic Hawaiian. With our user-friendly
-                      ordering platform and efficient delivery service, you can
-                      order with confidence at PizzaRush, your go-to pizza
-                      destination for every occasion.
+                      ingredients. With our user-friendly ordering platform and
+                      efficient delivery service, you can order with confidence
+                      at PizzaRush, your go-to pizza destination for every
+                      occasion.
                     </p>
                   </div>
                 </div>
