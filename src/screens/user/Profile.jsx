@@ -83,6 +83,7 @@ const Profile = () => {
         // Check if the user came from the cart
         const redirectTo = from === "/cart" ? "/cart" : "";
         navigate(redirectTo);
+        window.location.reload();
       } else {
         toast.error("Failed to update profile. Please try again.");
       }

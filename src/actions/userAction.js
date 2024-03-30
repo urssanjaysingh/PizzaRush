@@ -120,7 +120,6 @@ export const updateUserProfile = (userData) => async (dispatch, getState) => {
 
     dispatch({ type: "USER_UPDATE_PROFILE_SUCCESS", payload: response.data });
 
-    window.location.reload();
     return response.data;
   } catch (error) {
     console.error("Error updating user profile:", error);
