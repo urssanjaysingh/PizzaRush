@@ -59,9 +59,9 @@ const HomeScreen = () => {
   return (
     <>
       <Layout title={"PizzaRush - Pizza Delivery"}>
-        <section className="hero-section rounded py-4 py-xl-5 m-2 mt-0 mb-4">
+        <section className="hero-section rounded py-2 py-xl-3 m-2 mt-0 mb-2">
           <div className="container-fluid h-100">
-            <div className="text-white border rounded border-0 p-4 py-5 text-center">
+            <div className="text-white border rounded border-0 p-4 py-4 text-center">
               <div className="row h-100">
                 <div className="col-md-10 col-xl-8 text-center d-flex d-sm-flex d-md-flex justify-content-center align-items-center mx-auto justify-content-md-start align-items-md-center justify-content-xl-center">
                   <div>
