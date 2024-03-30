@@ -16,9 +16,13 @@ const PizzaDetails = () => {
   const [pizza, setPizza] = useState("");
   const [relatedPizzas, setRelatedPizzas] = useState([]);
   const [show, setShow] = useState(false);
+  const [selectedPizza, setSelectedPizza] = useState(null);
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleShow = (pizza) => {
+    setSelectedPizza(pizza);
+    setShow(true);
+  };
 
   useEffect(() => {
     const fetchPizza = async () => {
@@ -130,7 +134,7 @@ const PizzaDetails = () => {
                             src={p.image}
                             alt="Card"
                             style={{ cursor: "pointer" }}
-                            onClick={handleShow}
+                            onClick={() => handleShow(p)}
                           />
                         </div>
                         <div className="card-body">
@@ -178,22 +182,33 @@ const PizzaDetails = () => {
           <Offcanvas.Title>About</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <div className="square-container">
-            <img
-              className="card-img-top product-image"
-              src={pizza.image}
-              alt="Card"
-              style={{ cursor: "pointer" }}
-            />
-          </div>
-          <div>
-            <h2 className="main-product-title mt-2">{pizza.name}</h2>
-            <p className="product-description" style={{ textAlign: "justify" }}>
-              {pizza.description}
-            </p>
-            <h3 className="product-price">Price: ₹{pizza.price}</h3>
-            <h6 className="product-category">Category: {pizza?.category}</h6>
-          </div>
+          {selectedPizza && (
+            <>
+              <div className="square-container">
+                <img
+                  className="card-img-top product-image"
+                  src={selectedPizza.image}
+                  alt="Card"
+                  style={{ cursor: "pointer" }}
+                />
+              </div>
+              <div>
+                <h2 className="main-product-title mt-2">
+                  {selectedPizza.name}
+                </h2>
+                <p
+                  className="product-description"
+                  style={{ textAlign: "justify" }}
+                >
+                  {selectedPizza.description}
+                </p>
+                <h3 className="product-price">Price: ₹{selectedPizza.price}</h3>
+                <h6 className="product-category">
+                  Category: {selectedPizza.category}
+                </h6>
+              </div>
+            </>
+          )}
         </Offcanvas.Body>
       </Offcanvas>
     </Layout>
