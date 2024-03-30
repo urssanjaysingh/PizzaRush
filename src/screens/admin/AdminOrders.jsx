@@ -196,7 +196,7 @@ const AdminOrders = () => {
                                       ? p.pizza.name
                                       : p.customPizza && p.customPizza.name}
                                   </p>
-                                  <p className="product-description">
+                                  <p className="product-description text-justify">
                                     {p.predefined && p.pizza
                                       ? p.pizza.description
                                       : p.customPizza &&

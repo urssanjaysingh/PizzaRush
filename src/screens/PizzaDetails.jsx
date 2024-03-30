@@ -92,7 +92,9 @@ const PizzaDetails = () => {
                 <div className="col-md-6 d-flex align-items-center justify-content-center">
                   <div>
                     <h2 className="main-product-title">{pizza.name}</h2>
-                    <p className="product-description">{pizza.description}</p>
+                    <p className="product-description text-justify">
+                      {pizza.description}
+                    </p>
                     <h3 className="product-price">Price: ₹{pizza.price}</h3>
                     <h6 className="product-category">
                       Category: {pizza?.category}
@@ -137,7 +139,7 @@ const PizzaDetails = () => {
                             </h5>
                             <p className="product-price">₹{p.price}</p>
                           </div>
-                          <p className="card-text product-description">
+                          <p className="card-text product-description text-justify">
                             {p.description.length > 30
                               ? p.description.substring(0, 60) + "..."
                               : p.description}
@@ -182,7 +184,9 @@ const PizzaDetails = () => {
           </div>
           <div>
             <h2 className="main-product-title mt-2">{pizza.name}</h2>
-            <p className="product-description">{pizza.description}</p>
+            <p className="product-description text-justify">
+              {pizza.description}
+            </p>
             <h3 className="product-price">Price: ₹{pizza.price}</h3>
             <h6 className="product-category">Category: {pizza?.category}</h6>
           </div>

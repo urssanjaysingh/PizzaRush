@@ -30,7 +30,7 @@ const Pizza = ({ pizza }) => {
             <h5 className="card-title product-title">{pizza.name}</h5>
             <p className="product-price">₹{pizza.price}</p>
           </div>
-          <p className="card-text product-description">
+          <p className="card-text product-description text-justify">
             {pizza.description.length > 30
               ? pizza.description.substring(0, 60) + "..."
               : pizza.description}
