@@ -111,7 +111,7 @@ const ResetPassword = () => {
                       passwordValid ? "" : "is-invalid"
                     }`}
                     id="password"
-                    placeholder="Password"
+                    placeholder="New Password"
                     required
                   />
                   {/* Display password validation message */}
