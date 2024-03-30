@@ -6,7 +6,7 @@ import { updateUserProfile } from "../../actions/userAction";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import PulseLoader from "react-spinners/PulseLoader";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Profile = () => {
   const currentUser = useSelector(
@@ -14,6 +14,7 @@ const Profile = () => {
   );
 
   const dispatch = useDispatch();
+  const location = useLocation();
   const navigate = useNavigate();
 
   const [name, setName] = useState(currentUser?.user?.name || "");
@@ -78,10 +79,10 @@ const Profile = () => {
 
       if (updatedUser) {
         toast.success("Profile Updated Successfully");
-        const { state } = window.location;
-        if (state && state.from === "/cart") {
-          navigate("/cart");
-        }
+        const from = location.state ? location.state.from : "/";
+        // Check if the user came from the cart
+        const redirectTo = from === "/cart" ? "/cart" : "";
+        navigate(redirectTo);
       } else {
         toast.error("Failed to update profile. Please try again.");
       }
