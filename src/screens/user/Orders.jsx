@@ -114,9 +114,9 @@ const Orders = () => {
                               <div className="col-md-9 d-flex align-items-center justify-content-center">
                                 <div className="card-body mt-3">
                                   <p style={{ margin: 0, fontWeight: "bold" }}>
-                                    {p.predefined
+                                    {p.predefined && p.pizza
                                       ? p.pizza.name
-                                      : p.customPizza.name}
+                                      : p.customPizza && p.customPizza.name}
                                   </p>
                                   <p className="product-description">
                                     {p.predefined && p.pizza
