@@ -88,45 +88,40 @@ const Orders = () => {
                     </div>
                     <div className="container">
                       <div className="row">
-                        {o?.pizzas.map((p, j) => (
+                        {o?.pizzas.map((p, i) => (
                           <div
                             className="card mb-3 border-0 bg-light d-flex justify-content-center"
                             style={{ marginBottom: "20px" }}
-                            key={j}
+                            key={i}
                           >
                             <div className="row">
                               <div className="col-md-3 d-flex align-items-center justify-content-center">
                                 <img
                                   src={
-                                    p.predefined
+                                    p.predefined && p.pizza
                                       ? p.pizza.image
-                                      : p.customPizza.image
+                                      : p.customPizza && p.customPizza.image
                                   }
                                   className="img-fluid rounded-start"
                                   alt={
-                                    p.predefined
+                                    p.predefined && p.pizza
                                       ? p.pizza.name
-                                      : p.customPizza.name
+                                      : p.customPizza && p.customPizza.name
                                   }
                                 />
                               </div>
                               <div className="col-md-9 d-flex align-items-center justify-content-center">
                                 <div className="card-body mt-3">
-                                  <p
-                                    style={{
-                                      margin: 0,
-                                      fontSize: "20px",
-                                      fontWeight: "bold",
-                                    }}
-                                  >
+                                  <p style={{ margin: 0, fontWeight: "bold" }}>
                                     {p.predefined
                                       ? p.pizza.name
                                       : p.customPizza.name}
                                   </p>
                                   <p className="product-description">
-                                    {p.predefined
+                                    {p.predefined && p.pizza
                                       ? p.pizza.description
-                                      : p.customPizza.description}
+                                      : p.customPizza &&
+                                        p.customPizza.description}
                                   </p>
                                   <p
                                     style={{
@@ -138,18 +133,18 @@ const Orders = () => {
                                       Quantity: {p.quantity} &nbsp; &nbsp;{" "}
                                     </span>
                                     <span style={{ color: "salmon" }}>
-                                      Price: ₹
-                                      {p.predefined
+                                      {p.predefined && p.pizza
                                         ? p.pizza.price
-                                        : p.customPizza.price}{" "}
+                                        : p.customPizza && p.customPizza.price}
                                       &nbsp; &nbsp;{" "}
                                     </span>
                                     <span style={{ color: "tomato" }}>
                                       Total: ₹
                                       {p.quantity *
-                                        (p.predefined
+                                        (p.predefined && p.pizza
                                           ? p.pizza.price
-                                          : p.customPizza.price)}
+                                          : p.customPizza &&
+                                            p.customPizza.price)}
                                     </span>
                                   </p>
                                 </div>
