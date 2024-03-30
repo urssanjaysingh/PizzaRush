@@ -78,7 +78,7 @@ const HomeScreen = () => {
                 </div>
               </div>
               <Button className="btn product-button" onClick={openModal}>
-                Create Your Own Customized Pizza
+                Custom Pizza
               </Button>
               <CustomPizzaModal
                 show={showModal}
