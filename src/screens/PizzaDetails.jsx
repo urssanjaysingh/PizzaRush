@@ -92,7 +92,7 @@ const PizzaDetails = () => {
                 </div>
                 <div className="col-md-6 d-flex align-items-center justify-content-center">
                   <div>
-                    <h2 className="main-product-title">{pizza.name}</h2>
+                    <h2 className="main-product-title mt-2">{pizza.name}</h2>
                     <p
                       className="product-description"
                       style={{ textAlign: "justify" }}
