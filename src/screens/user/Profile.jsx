@@ -102,86 +102,90 @@ const Profile = () => {
           <UserMenu />
         </div>
         <div className="col-md-9">
-          <div className="rounded p-3 border">
-            <h1 className="mb-4 text-center">User Profile</h1>
-            <div className="d-flex flex-wrap fade-in justify-content-center mt-2">
-              <div className="m-1 w-100">
-                <form onSubmit={handleSubmit}>
-                  <div className="mb-3">
-                    <input
-                      type="text"
-                      value={name}
-                      autoComplete="off"
-                      onChange={(e) => setName(e.target.value)}
-                      className="form-control"
-                      id="name"
-                      placeholder="Name"
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <input
-                      type="email"
-                      value={email}
-                      autoComplete="off"
-                      className="form-control"
-                      id="email"
-                      placeholder="Email"
-                      disabled
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <input
-                      type="password"
-                      value={password}
-                      autoComplete="off"
-                      onChange={(e) => handlePasswordChange(e.target.value)}
-                      className={`form-control ${
-                        passwordValid ? "" : "is-invalid"
-                      }`}
-                      id="password"
-                      placeholder="Password"
-                    />
-                    {passwordMessage && (
-                      <div className="invalid-feedback">{passwordMessage}</div>
-                    )}
-                  </div>
-                  <div className="mb-3">
-                    <input
-                      type="tel"
-                      value={phone}
-                      autoComplete="off"
-                      onChange={(e) => handlePhoneChange(e.target.value)}
-                      className={`form-control ${
-                        phoneValid ? "" : "is-invalid"
-                      }`}
-                      id="phone"
-                      placeholder="Phone"
-                    />
-                    {phoneMessage && (
-                      <div className="invalid-feedback">{phoneMessage}</div>
-                    )}
-                  </div>
-                  <div className="mb-3">
-                    <input
-                      type="text"
-                      value={address}
-                      autoComplete="off"
-                      onChange={(e) => setAddress(e.target.value)}
-                      className="form-control"
-                      id="address"
-                      placeholder="Address"
-                    />
-                  </div>
-                  <div className="text-center">
-                    <button type="submit" className="btn btn-primary">
-                      {loading ? (
-                        <PulseLoader size={10} color={"#FFF"} margin={2} />
-                      ) : (
-                        "Update"
+          <div className="col-md-5">
+            <div className="rounded p-3 border">
+              <h1 className="mb-4 text-center">User Profile</h1>
+              <div className="d-flex flex-wrap fade-in justify-content-center mt-2">
+                <div className="m-1 w-100">
+                  <form onSubmit={handleSubmit}>
+                    <div className="mb-3">
+                      <input
+                        type="text"
+                        value={name}
+                        autoComplete="off"
+                        onChange={(e) => setName(e.target.value)}
+                        className="form-control"
+                        id="name"
+                        placeholder="Name"
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <input
+                        type="email"
+                        value={email}
+                        autoComplete="off"
+                        className="form-control"
+                        id="email"
+                        placeholder="Email"
+                        disabled
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <input
+                        type="password"
+                        value={password}
+                        autoComplete="off"
+                        onChange={(e) => handlePasswordChange(e.target.value)}
+                        className={`form-control ${
+                          passwordValid ? "" : "is-invalid"
+                        }`}
+                        id="password"
+                        placeholder="Password"
+                      />
+                      {passwordMessage && (
+                        <div className="invalid-feedback">
+                          {passwordMessage}
+                        </div>
                       )}
-                    </button>
-                  </div>
-                </form>
+                    </div>
+                    <div className="mb-3">
+                      <input
+                        type="tel"
+                        value={phone}
+                        autoComplete="off"
+                        onChange={(e) => handlePhoneChange(e.target.value)}
+                        className={`form-control ${
+                          phoneValid ? "" : "is-invalid"
+                        }`}
+                        id="phone"
+                        placeholder="Phone"
+                      />
+                      {phoneMessage && (
+                        <div className="invalid-feedback">{phoneMessage}</div>
+                      )}
+                    </div>
+                    <div className="mb-3">
+                      <input
+                        type="text"
+                        value={address}
+                        autoComplete="off"
+                        onChange={(e) => setAddress(e.target.value)}
+                        className="form-control"
+                        id="address"
+                        placeholder="Address"
+                      />
+                    </div>
+                    <div className="text-center">
+                      <button type="submit" className="btn btn-primary">
+                        {loading ? (
+                          <PulseLoader size={10} color={"#FFF"} margin={2} />
+                        ) : (
+                          "Update"
+                        )}
+                      </button>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
