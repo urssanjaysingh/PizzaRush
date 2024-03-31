@@ -64,82 +64,86 @@ const AllUsers = () => {
             All Users
           </h1>
           <div className="d-flex flex-wrap fade-in mt-2">
-            {loading ? (
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  minHeight: "50vh",
-                }}
-              >
-                <Spin size="large" />
-              </div>
-            ) : users && users.length > 0 ? (
-              users.map((user, index) => (
-                <div className="border-0 order-container" key={index}>
-                  <hr className="mb-0" />
-                  <div className="table-responsive">
-                    <table className="table table-striped">
-                      <thead className="table-header">
-                        <tr>
-                          <th scope="col">#</th>
-                          <th scope="col">Name</th>
-                          <th scope="col">Email</th>
-                          <th scope="col">Verified</th>
-                          <th scope="col">Phone</th>
-                          <th scope="col">Address</th>
-                          <th scope="col">Role</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>{index + 1}</td>
-                          <td>{user.name}</td>
-                          <td>{user.email}</td>
-                          <td>{user.verified ? "Verified" : "Not Verified"}</td>
-                          <td>{user.phone}</td>
-                          <td>{user.address}</td>
-                          <td>{user.role === 1 ? "Admin" : "User"}</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <div className="mb-3 text-center">
-                    <button
-                      className="btn btn-danger ms-2"
-                      onClick={() => showDeleteModal(user._id)}
-                    >
-                      Delete
-                    </button>
-                  </div>
+            <div className="m-1 w-100">
+              {loading ? (
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    minHeight: "50vh",
+                  }}
+                >
+                  <Spin size="large" />
                 </div>
-              ))
-            ) : (
-              <div className="text-center">No users found.</div>
-            )}
-            <Modal
-              title="Confirm Delete"
-              open={isDeleteModalOpen}
-              footer={[
-                <button
-                  key="no"
-                  className="btn btn-primary ms-2"
-                  onClick={() => handleDeleteConfirm(false)}
-                >
-                  No
-                </button>,
-                <button
-                  key="yes"
-                  className="btn btn-danger ms-2"
-                  onClick={() => handleDeleteConfirm(true)}
-                >
-                  Yes
-                </button>,
-              ]}
-              onCancel={hideDeleteModal}
-            >
-              Are you sure you want to delete this user?
-            </Modal>
+              ) : users && users.length > 0 ? (
+                users.map((user, index) => (
+                  <div className="border-0 order-container" key={index}>
+                    <hr className="mb-0" />
+                    <div className="table-responsive">
+                      <table className="table table-striped">
+                        <thead className="table-header">
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Verified</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Role</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>{index + 1}</td>
+                            <td>{user.name}</td>
+                            <td>{user.email}</td>
+                            <td>
+                              {user.verified ? "Verified" : "Not Verified"}
+                            </td>
+                            <td>{user.phone}</td>
+                            <td>{user.address}</td>
+                            <td>{user.role === 1 ? "Admin" : "User"}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div className="mb-3 text-center">
+                      <button
+                        className="btn btn-danger ms-2"
+                        onClick={() => showDeleteModal(user._id)}
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  </div>
+                ))
+              ) : (
+                <div className="text-center">No users found.</div>
+              )}
+              <Modal
+                title="Confirm Delete"
+                open={isDeleteModalOpen}
+                footer={[
+                  <button
+                    key="no"
+                    className="btn btn-primary ms-2"
+                    onClick={() => handleDeleteConfirm(false)}
+                  >
+                    No
+                  </button>,
+                  <button
+                    key="yes"
+                    className="btn btn-danger ms-2"
+                    onClick={() => handleDeleteConfirm(true)}
+                  >
+                    Yes
+                  </button>,
+                ]}
+                onCancel={hideDeleteModal}
+              >
+                Are you sure you want to delete this user?
+              </Modal>
+            </div>
           </div>
         </div>
       </div>
