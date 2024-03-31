@@ -6,7 +6,7 @@ const Policy = () => {
     <>
       <Layout title={"Privacy-Policy"}>
         <div className="container">
-          <h1 className="text-center text-dark mb-4">Privacy Policy</h1>
+          <h1 className="text-center text-dark mb-4 mt-2">Privacy Policy</h1>
           <div className="row">
             <div className="col-md-12 text-center">
               <img

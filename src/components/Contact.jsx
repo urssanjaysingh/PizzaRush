@@ -19,7 +19,9 @@ const Contact = () => {
             />
           </div>
           <div className="col-md-4" style={{ textAlign: "justify" }}>
-            <h1 className="bg-dark p-2 text-warning text-center">CONTACT US</h1>
+            <h1 className="bg-dark p-2 text-warning text-center mt-2">
+              CONTACT US
+            </h1>
             <p className="text-justify mt-2">
               Any query and info about the product, feel free to call anytime;
               we are available 24X7.

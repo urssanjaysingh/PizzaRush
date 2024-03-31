@@ -18,7 +18,9 @@ const About = () => {
             />
           </div>
           <div className="col-md-5" style={{ textAlign: "justify" }}>
-            <h1 className="bg-dark p-2 text-warning text-center">ABOUT US</h1>
+            <h1 className="bg-dark p-2 text-warning text-center mt-2">
+              ABOUT US
+            </h1>
             <p className="text-justify mt-3">
               Welcome to PizzaRush! At PizzaRush, we are passionate about
               delivering the finest pizzas right to your doorstep. Our

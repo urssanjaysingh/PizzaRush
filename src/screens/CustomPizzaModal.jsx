@@ -53,7 +53,7 @@ const CustomPizzaModal = ({ show, handleClose, customPizzaData }) => {
   return (
     <StyledModal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Create Your Own Customized Pizza</Modal.Title>
+        <Modal.Title>Craft Your Pizza</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
