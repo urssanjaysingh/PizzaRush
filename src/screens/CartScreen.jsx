@@ -116,7 +116,7 @@ const CartScreen = () => {
 
   return (
     <>
-      <Layout title={"Cart"}>
+      <Layout title={"Pizzarush - Cart"}>
         <div className="container">
           <div className="row">
             <div className="col-md-12">

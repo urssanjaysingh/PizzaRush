@@ -17,7 +17,7 @@ const Pizzas = () => {
   }, [dispatch]);
 
   return (
-    <Layout title={"Pizzas"}>
+    <Layout title={"Pizzarush - All-Pizzas"}>
       <div className="row">
         <div className="col-md-3">
           <AdminMenu />

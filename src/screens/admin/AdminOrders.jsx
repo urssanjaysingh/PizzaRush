@@ -101,7 +101,7 @@ const AdminOrders = () => {
   };
 
   return (
-    <Layout title="All Orders Data">
+    <Layout title={"Pizzarush - All-Orders"}>
       <div className="row">
         <div className="col-md-3">
           <AdminMenu />

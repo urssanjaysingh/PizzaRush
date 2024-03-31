@@ -5,7 +5,7 @@ import { BiMailSend, BiPhoneCall, BiSupport } from "react-icons/bi";
 const Contact = () => {
   return (
     <>
-      <Layout title={"Contact-Us"}>
+      <Layout title={"Pizzarush - Contact"}>
         <div
           className="row contactus align-items-center"
           style={{ marginTop: "50px" }}

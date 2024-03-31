@@ -96,7 +96,7 @@ const Profile = () => {
   };
 
   return (
-    <Layout title={"Your Profile"}>
+    <Layout title={"Pizzarush - Your-Profile"}>
       <div className="row">
         <div className="col-md-3">
           <UserMenu />

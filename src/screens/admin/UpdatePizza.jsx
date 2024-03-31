@@ -110,7 +110,7 @@ const UpdatePizza = () => {
   };
 
   return (
-    <Layout title="Dashboard - Update Pizza">
+    <Layout title={"Pizzarush - Update-Pizza"}>
       <div className="row">
         <div className="col-md-3">
           <AdminMenu />

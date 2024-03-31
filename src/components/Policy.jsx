@@ -4,7 +4,7 @@ import Layout from "./Layout";
 const Policy = () => {
   return (
     <>
-      <Layout title={"Privacy-Policy"}>
+      <Layout title={"Pizzarush - Policy"}>
         <div className="container">
           <h1 className="text-center text-dark mb-4 mt-2">Privacy Policy</h1>
           <div className="row">

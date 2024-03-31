@@ -33,7 +33,7 @@ const ForgotPassword = () => {
   };
 
   return (
-    <Layout title={"Forgot Password"}>
+    <Layout title={"Pizzarush - Forgot-Password"}>
       <div
         className="d-flex justify-content-center align-items-center"
         style={{ minHeight: "calc(100vh - 150px)" }}

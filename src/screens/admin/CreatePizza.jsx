@@ -53,7 +53,7 @@ const CreatePizza = () => {
   };
 
   return (
-    <Layout title="Dashboard - Create Pizza">
+    <Layout title={"Pizzarush - Create-Pizza"}>
       <div className="row">
         <div className="col-md-3">
           <AdminMenu />

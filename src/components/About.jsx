@@ -4,7 +4,7 @@ import Layout from "./Layout";
 const About = () => {
   return (
     <>
-      <Layout title={"About-Us"}>
+      <Layout title={"Pizzarush - About"}>
         <div
           className="row aboutus align-items-center"
           style={{ marginTop: "25px" }}

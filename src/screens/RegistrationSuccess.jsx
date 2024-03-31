@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const RegistrationSuccess = () => {
   return (
-    <Layout title={"Registration Successful"}>
+    <Layout title={"Pizzarush - Registration-Successful"}>
       <div
         className="d-flex justify-content-center align-items-center"
         style={{ marginTop: "150px" }}

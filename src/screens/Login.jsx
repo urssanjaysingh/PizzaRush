@@ -62,7 +62,7 @@ const Login = () => {
   };
 
   return (
-    <Layout title={"Login"}>
+    <Layout title={"Pizzarush - Login"}>
       <div
         className="d-flex justify-content-center align-items-center"
         style={{ minHeight: "calc(100vh - 150px)" }}

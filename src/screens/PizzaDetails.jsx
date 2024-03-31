@@ -61,7 +61,7 @@ const PizzaDetails = () => {
   };
 
   return (
-    <Layout title={"Pizza Details"}>
+    <Layout title={"Pizzarush - Pizza-Details"}>
       <div className="container">
         <h1 className="text-center">Pizza Details</h1>
         <hr />

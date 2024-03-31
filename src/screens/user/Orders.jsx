@@ -35,7 +35,7 @@ const Orders = () => {
   };
 
   return (
-    <Layout title={"Your Orders"}>
+    <Layout title={"Pizzarush - Your-Orders"}>
       <div className="row">
         <div className="col-md-3">
           <UserMenu />

@@ -54,7 +54,7 @@ const AllUsers = () => {
   };
 
   return (
-    <Layout title="All Users Data">
+    <Layout title={"Pizzarush - All-Users"}>
       <div className="row">
         <div className="col-md-3">
           <AdminMenu />

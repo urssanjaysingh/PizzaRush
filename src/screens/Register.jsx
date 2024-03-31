@@ -112,7 +112,7 @@ const Register = () => {
 
   return (
     <>
-      <Layout title={"Register"}>
+      <Layout title={"Pizzarush - Register"}>
         <div
           className="d-flex justify-content-center align-items-center"
           style={{ minHeight: "calc(100vh - 150px)" }}
