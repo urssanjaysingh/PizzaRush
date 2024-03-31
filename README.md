@@ -2,8 +2,6 @@
 
 Welcome to PizzaRush, where ordering your favorite pizzas is a breeze! Dive into a world of delicious flavors and convenient ordering, all at your fingertips. Whether you're a fan of classic margheritas or love to craft your own culinary masterpiece, PizzaRush has everything you need to satisfy your pizza cravings.
 
-[![Live Website](https://img.shields.io/badge/-Live%20Website-brightgreen?style=for-the-badge)](https://pizzarush.onrender.com/)
-
 ## 🍕 Explore PizzaRush
 
 Ready to embark on a pizza adventure? Visit our live website to experience PizzaRush firsthand:
@@ -37,5 +35,7 @@ Feel free to explore, contribute, or report issues!
 🔑 **Forgot Password and OTP**: Securely reset passwords using the forgot password functionality, with OTP sent to your email.
 
 ## 🍴 Ready to Order?
+
+[![Live Website](https://img.shields.io/badge/-Live%20Website-brightgreen?style=for-the-badge)](https://pizzarush.onrender.com/)
 
 Join PizzaRush today and elevate your pizza experience to new heights! Whether you're a pizza aficionado or just craving a slice, PizzaRush is here to make your pizza dreams come true. Order now and savor the flavor!
