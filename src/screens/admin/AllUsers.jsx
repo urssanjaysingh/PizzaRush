@@ -63,7 +63,7 @@ const AllUsers = () => {
           <h1 className="text-center" style={{ marginTop: 40 }}>
             All Users
           </h1>
-          <div className="d-flex flex-wrap fade-in justify-content-center mt-2">
+          <div className="d-flex flex-wrap fade-in mt-2">
             {loading ? (
               <div
                 style={{

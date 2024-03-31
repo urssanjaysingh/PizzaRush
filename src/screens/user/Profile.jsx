@@ -97,19 +97,19 @@ const Profile = () => {
 
   return (
     <Layout title={"Your Profile"}>
-      <div className="container-fluid m-3 p-3">
-        <div className="row">
-          <div className="col-md-3">
-            <UserMenu />
-          </div>
-          <div className="col-md-9">
-            <div
-              className="d-flex justify-content-center align-items-center"
-              style={{ minHeight: "calc(100vh - 150px)", marginTop: 40 }}
-            >
-              <div className="col-md-5">
-                <div className="rounded p-3 border">
-                  <h1 className="mb-4 text-center">User Profile</h1>
+      <div className="row">
+        <div className="col-md-3">
+          <UserMenu />
+        </div>
+        <div className="col-md-9">
+          <div
+            className="d-flex justify-content-center align-items-center"
+            style={{ minHeight: "calc(100vh - 150px)" }}
+          >
+            <div className="col-md-5">
+              <div className="rounded p-3 border">
+                <h1 className="mb-4 text-center">User Profile</h1>
+                <div className="d-flex flex-wrap fade-in justify-content-center mt-2">
                   <form onSubmit={handleSubmit}>
                     <div className="mb-3">
                       <input
