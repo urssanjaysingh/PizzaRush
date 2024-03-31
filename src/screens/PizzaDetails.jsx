@@ -195,7 +195,7 @@ const PizzaDetails = () => {
                 />
               </div>
               <div>
-                <h2 className="main-product-title mt-2">
+                <h2 className="main-product-title mt-4">
                   {selectedPizza.name}
                 </h2>
                 <p
