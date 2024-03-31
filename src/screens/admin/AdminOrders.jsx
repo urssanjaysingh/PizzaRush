@@ -196,7 +196,10 @@ const AdminOrders = () => {
                                       ? p.pizza.name
                                       : p.customPizza && p.customPizza.name}
                                   </p>
-                                  <p className="product-description" style={{ textAlign: "justify" }}>
+                                  <p
+                                    className="product-description"
+                                    style={{ textAlign: "justify" }}
+                                  >
                                     {p.predefined && p.pizza
                                       ? p.pizza.description
                                       : p.customPizza &&
@@ -212,6 +215,7 @@ const AdminOrders = () => {
                                       Quantity: {p.quantity} &nbsp; &nbsp;{" "}
                                     </span>
                                     <span style={{ color: "salmon" }}>
+                                      Price: ₹
                                       {p.predefined && p.pizza
                                         ? p.pizza.price
                                         : p.customPizza && p.customPizza.price}

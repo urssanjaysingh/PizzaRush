@@ -136,6 +136,7 @@ const Orders = () => {
                                       Quantity: {p.quantity} &nbsp; &nbsp;{" "}
                                     </span>
                                     <span style={{ color: "salmon" }}>
+                                      Price: ₹
                                       {p.predefined && p.pizza
                                         ? p.pizza.price
                                         : p.customPizza && p.customPizza.price}

@@ -216,7 +216,7 @@ const CartScreen = () => {
                                   />
                                   {/* Adjusted icon size and color */}
                                 </button>{" "}
-                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <span
                                   style={{
                                     fontWeight: "bold",
