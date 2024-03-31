@@ -102,15 +102,15 @@ const AdminOrders = () => {
 
   return (
     <Layout title="All Orders Data">
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-md-3">
-            <AdminMenu />
-          </div>
-          <div className="col-md-9">
-            <h1 className="text-center mb-3" style={{ marginTop: 40 }}>
-              All Orders
-            </h1>
+      <div className="row">
+        <div className="col-md-3">
+          <AdminMenu />
+        </div>
+        <div className="col-md-9">
+          <h1 className="text-center" style={{ marginTop: 40 }}>
+            All Orders
+          </h1>
+          <div className="d-flex flex-wrap fade-in justify-content-center mt-2">
             {loading ? (
               <div
                 style={{

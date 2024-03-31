@@ -111,15 +111,15 @@ const UpdatePizza = () => {
 
   return (
     <Layout title="Dashboard - Update Pizza">
-      <div className="container-fluid m-3 p-d">
-        <div className="row">
-          <div className="col-md-3">
-            <AdminMenu />
-          </div>
-          <div className="col-md-9">
-            <h1 className="text-center" style={{ marginTop: 40 }}>
-              Update Pizza
-            </h1>
+      <div className="row">
+        <div className="col-md-3">
+          <AdminMenu />
+        </div>
+        <div className="col-md-9">
+          <h1 className="text-center" style={{ marginTop: 40 }}>
+            Update Pizza
+          </h1>
+          <div className="d-flex flex-wrap fade-in justify-content-center mt-2">
             <div className="m-1 w-100">
               <Select
                 className="form-control mb-3"
@@ -224,30 +224,31 @@ const UpdatePizza = () => {
                 </button>
               </div>
             </div>
-            <Modal
-              title="Confirm Delete"
-              open={isDeleteModalOpen}
-              footer={[
-                <button
-                  key="no"
-                  className="btn btn-primary ms-2"
-                  onClick={() => handleDeleteConfirm(false)}
-                >
-                  No
-                </button>,
-                <button
-                  key="yes"
-                  className="btn btn-danger ms-2"
-                  onClick={() => handleDeleteConfirm(true)}
-                >
-                  Yes
-                </button>,
-              ]}
-              onCancel={hideDeleteModal}
-            >
-              Are you sure you want to delete this pizza?
-            </Modal>
           </div>
+
+          <Modal
+            title="Confirm Delete"
+            open={isDeleteModalOpen}
+            footer={[
+              <button
+                key="no"
+                className="btn btn-primary ms-2"
+                onClick={() => handleDeleteConfirm(false)}
+              >
+                No
+              </button>,
+              <button
+                key="yes"
+                className="btn btn-danger ms-2"
+                onClick={() => handleDeleteConfirm(true)}
+              >
+                Yes
+              </button>,
+            ]}
+            onCancel={hideDeleteModal}
+          >
+            Are you sure you want to delete this pizza?
+          </Modal>
         </div>
       </div>
     </Layout>

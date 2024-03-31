@@ -14,12 +14,12 @@ const AdminDashboard = () => {
 
   return (
     <Layout title="Dashboard">
-      <div className="container-fluid m-3 p-d">
-        <div className="row">
-          <div className="col-md-3">
-            <AdminMenu />
-          </div>
-          <div className="col-md-9" style={{ marginTop: 40 }}>
+      <div className="row">
+        <div className="col-md-3">
+          <AdminMenu />
+        </div>
+        <div className="col-md-9" style={{ marginTop: 40 }}>
+          <div className="d-flex flex-wrap fade-in justify-content-center mt-2">
             <div className="card w-75 p-3">
               <h3>{currentUser?.user?.name}</h3>
               <h3>{currentUser?.user?.email}</h3>
