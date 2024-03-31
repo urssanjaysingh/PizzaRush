@@ -54,15 +54,15 @@ const CreatePizza = () => {
 
   return (
     <Layout title="Dashboard - Create Pizza">
-      <div className="container-fluid m-3 p-d">
-        <div className="row">
-          <div className="col-md-3">
-            <AdminMenu />
-          </div>
-          <div className="col-md-9 mt-4">
-            <h1 className="text-center" style={{ marginTop: 40 }}>
-              Create Pizza
-            </h1>
+      <div className="row">
+        <div className="col-md-3">
+          <AdminMenu />
+        </div>
+        <div className="col-md-9">
+          <h1 className="text-center" style={{ marginTop: 40 }}>
+            Create Pizza
+          </h1>
+          <div className="d-flex flex-wrap fade-in justify-content-center mt-2">
             <div className="m-1 w-100">
               <Select
                 className="form-control mb-3"
