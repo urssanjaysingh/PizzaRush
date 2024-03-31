@@ -2,6 +2,8 @@
 
 Welcome to PizzaRush, where ordering your favorite pizzas is a breeze! Dive into a world of delicious flavors and convenient ordering, all at your fingertips. Whether you're a fan of classic margheritas or love to craft your own culinary masterpiece, PizzaRush has everything you need to satisfy your pizza cravings.
 
+[![Live Website](https://img.shields.io/badge/-Live%20Website-brightgreen?style=for-the-badge)](https://pizzarush.onrender.com/)
+
 ## 🍕 Explore PizzaRush
 
 Ready to embark on a pizza adventure? Visit our live website to experience PizzaRush firsthand:
