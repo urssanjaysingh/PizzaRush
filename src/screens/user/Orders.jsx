@@ -142,14 +142,16 @@ const Orders = () => {
                                         : p.customPizza && p.customPizza.price}
                                       &nbsp; &nbsp;{" "}
                                     </span>
-                                    <span style={{ color: "tomato" }}>
-                                      Total: ₹
-                                      {p.quantity *
-                                        (p.predefined && p.pizza
-                                          ? p.pizza.price
-                                          : p.customPizza &&
-                                            p.customPizza.price)}
-                                    </span>
+                                    <p>
+                                      <span style={{ color: "tomato" }}>
+                                        Total: ₹
+                                        {p.quantity *
+                                          (p.predefined && p.pizza
+                                            ? p.pizza.price
+                                            : p.customPizza &&
+                                              p.customPizza.price)}
+                                      </span>
+                                    </p>
                                   </p>
                                 </div>
                               </div>

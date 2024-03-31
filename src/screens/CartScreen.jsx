@@ -216,43 +216,46 @@ const CartScreen = () => {
                                   />
                                   {/* Adjusted icon size and color */}
                                 </button>{" "}
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <span
-                                  style={{
-                                    fontWeight: "bold",
-                                    marginTop: "8px",
-                                    color: "salmon",
-                                  }}
-                                >
-                                  Price: ₹{pizza.price}
-                                </span>
-                                &nbsp;&nbsp;&nbsp;&nbsp;
-                                <span
-                                  style={{
-                                    fontWeight: "bold",
-                                    marginTop: "8px",
-                                    color: "tomato",
-                                  }}
-                                >
-                                  Total: ₹{pizza.price * pizza.quantity}{" "}
-                                </span>{" "}
-                                &nbsp;&nbsp;&nbsp;&nbsp;
-                                <button
-                                  className="btn"
-                                  style={{ border: "none", cursor: "pointer" }}
-                                  onClick={() =>
-                                    dispatch(deleteFromCart(pizza))
-                                  }
-                                >
-                                  <FontAwesomeIcon
-                                    icon={faTrash}
+                                <p>
+                                  <span
                                     style={{
-                                      fontSize: "1.2rem",
-                                      color: "#FF4444",
+                                      fontWeight: "bold",
+                                      marginTop: "8px",
+                                      color: "salmon",
                                     }}
-                                  />
-                                </button>
+                                  >
+                                    Price: ₹{pizza.price}
+                                  </span>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;
+                                  <span
+                                    style={{
+                                      fontWeight: "bold",
+                                      marginTop: "8px",
+                                      color: "tomato",
+                                    }}
+                                  >
+                                    Total: ₹{pizza.price * pizza.quantity}{" "}
+                                  </span>{" "}
+                                  &nbsp;&nbsp;&nbsp;&nbsp;
+                                  <button
+                                    className="btn"
+                                    style={{
+                                      border: "none",
+                                      cursor: "pointer",
+                                    }}
+                                    onClick={() =>
+                                      dispatch(deleteFromCart(pizza))
+                                    }
+                                  >
+                                    <FontAwesomeIcon
+                                      icon={faTrash}
+                                      style={{
+                                        fontSize: "1.2rem",
+                                        color: "#FF4444",
+                                      }}
+                                    />
+                                  </button>
+                                </p>
                               </div>
                             </div>
                           </div>
