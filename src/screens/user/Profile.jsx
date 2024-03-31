@@ -102,10 +102,10 @@ const Profile = () => {
           <UserMenu />
         </div>
         <div className="col-md-9">
-          <div className="col-md-5">
-            <div className="rounded p-3 border">
-              <h1 className="mb-4 text-center">User Profile</h1>
-              <div className="d-flex flex-wrap fade-in justify-content-center mt-2">
+          <div className="d-flex flex-wrap fade-in justify-content-center mt-2">
+            <div className="col-md-5">
+              <div className="rounded p-3 border" style={{ marginTop: 40 }}>
+                <h1 className="mb-4 text-center">User Profile</h1>
                 <div className="m-1 w-100">
                   <form onSubmit={handleSubmit}>
                     <div className="mb-3">
