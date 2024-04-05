@@ -40,14 +40,19 @@ const CustomPizza = [
 
 const HomeScreen = () => {
   const dispatch = useDispatch();
-  const pizzaState = useSelector((state) => state.getAllPizzaReducer);
-  const { loading, pizzas } = pizzaState;
+  const {
+    loading,
+    pizzas = [],
+    pizzasFetched,
+  } = useSelector((state) => state.getAllPizzaReducer);
 
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    dispatch(getAllPizzas());
-  }, [dispatch]);
+    if (!pizzasFetched) {
+      dispatch(getAllPizzas());
+    }
+  }, [dispatch, pizzasFetched]);
 
   const openModal = () => {
     setShowModal(true);
@@ -104,7 +109,7 @@ const HomeScreen = () => {
             >
               <Spin size="large" />
             </div>
-          ) : pizzas && pizzas.length ? (
+          ) : pizzas.length ? (
             <Suspense fallback={<div>Loading...</div>}>
               {pizzas.map((pizza) => (
                 <Pizza key={pizza.id} pizza={pizza} />
