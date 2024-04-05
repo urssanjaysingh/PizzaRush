@@ -2,6 +2,9 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../actions/cartAction";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
+import React, { Suspense, lazy } from "react";
+
+const LazyImage = lazy(() => import("./LazyImage"));
 
 const Pizza = ({ pizza }) => {
   const dispatch = useDispatch();
@@ -18,12 +21,9 @@ const Pizza = ({ pizza }) => {
       >
         <Link to={`/pizza/${pizza._id}`} style={{ textDecoration: "none" }}>
           <div className="square-container">
-            <img
-              className="card-img-top product-image"
-              src={pizza.image}
-              alt="Card"
-              style={{ cursor: "pointer" }}
-            />
+            <Suspense fallback={<div>Loading...</div>}>
+              <LazyImage src={pizza.image} alt="Card" />
+            </Suspense>
           </div>
         </Link>
         <div className="card-body">

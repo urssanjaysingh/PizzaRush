@@ -42,7 +42,7 @@ const HomeScreen = () => {
   const pizzaState = useSelector((state) => state.getAllPizzaReducer);
   const { loading, pizzas, error } = pizzaState;
 
-  const [showModal, setShowModal] = useState(false); // State for managing modal visibility
+  const [showModal, setShowModal] = useState(false); 
 
   useEffect(() => {
     dispatch(getAllPizzas());
