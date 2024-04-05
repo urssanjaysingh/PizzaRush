@@ -76,7 +76,6 @@ const Orders = () => {
                           <thead className="table-header">
                             <tr>
                               <th scope="col">#</th>
-                              <th scope="col">Status</th>
                               <th scope="col">Buyer</th>
                               <th scope="col">Date</th>
                               <th scope="col">Payment</th>
@@ -86,22 +85,6 @@ const Orders = () => {
                           <tbody>
                             <tr>
                               <td>{i + 1}</td>
-                              <td>
-                                <Steps
-                                  current={orderStatusSteps.findIndex(
-                                    (step) => step.title === o.status
-                                  )}
-                                  direction="vertical"
-                                >
-                                  {orderStatusSteps.map((step, index) => (
-                                    <Step
-                                      key={index}
-                                      title={step.title}
-                                      description={step.description}
-                                    />
-                                  ))}
-                                </Steps>
-                              </td>
                               <td>{o?.buyer?.name}</td>
                               <td>{moment(o?.createdAt).fromNow()}</td>
                               <td>
@@ -112,6 +95,19 @@ const Orders = () => {
                           </tbody>
                         </table>
                       </div>
+                      <Steps
+                        current={orderStatusSteps.findIndex(
+                          (step) => step.title === o.status
+                        )}
+                      >
+                        {orderStatusSteps.map((step, index) => (
+                          <Step
+                            key={index}
+                            title={step.title}
+                            description={step.description}
+                          />
+                        ))}
+                      </Steps>
                       <div className="container">
                         <div className="row">
                           {o?.pizzas.map((p, i) => (
