@@ -13,7 +13,7 @@ const orderStatusSteps = [
   { title: "Processing" },
   { title: "Shipped" },
   { title: "Delivered" },
-  { title: "Canceled" },
+  { title: "Canceled", status: "error" },
 ];
 
 const Orders = () => {
@@ -103,7 +103,11 @@ const Orders = () => {
                           className="d-flex justify-content-between"
                         >
                           {orderStatusSteps.map((step, index) => (
-                            <Step key={index} title={step.title} />
+                            <Step
+                              key={index}
+                              status={step.status}
+                              title={step.title}
+                            />
                           ))}
                         </Steps>
                       </div>
