@@ -107,7 +107,7 @@ const HomeScreen = () => {
           ) : error ? (
             <h1>Error while fetching pizzas</h1>
           ) : pizzas && pizzas.length ? (
-            <Suspense fallback={<div />}>
+            <Suspense fallback={<div>Loading...</div>}>
               {pizzas.map((pizza) => (
                 <Pizza key={pizza.id} pizza={pizza} />
               ))}
