@@ -41,13 +41,33 @@ const CustomPizza = [
 const HomeScreen = () => {
   const dispatch = useDispatch();
   const pizzaState = useSelector((state) => state.getAllPizzaReducer);
-  const { loading, pizzas, error } = pizzaState;
+  const { loading, pizzas } = pizzaState;
+  const [retryCount, setRetryCount] = useState(0);
 
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    dispatch(getAllPizzas());
-  }, [dispatch]);
+    const fetchPizzas = async () => {
+      try {
+        await dispatch(getAllPizzas());
+      } catch (error) {
+        console.error("Error fetching pizzas:", error);
+        // Retry logic: Retry up to 3 times with a delay of 3 seconds
+        if (retryCount < 3) {
+          setTimeout(() => {
+            setRetryCount(retryCount + 1);
+            fetchPizzas();
+          }, 3000);
+        }
+      }
+    };
+
+    // Fetch pizzas on component mount
+    fetchPizzas();
+
+    // Reset retry count on component unmount
+    return () => setRetryCount(0);
+  }, [dispatch, retryCount]);
 
   const openModal = () => {
     setShowModal(true);
