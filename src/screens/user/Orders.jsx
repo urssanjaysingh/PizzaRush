@@ -106,7 +106,17 @@ const Orders = () => {
                             <Step
                               key={index}
                               title={step.title}
-                              style={{ color: step.color }}
+                              icon={
+                                <div
+                                  style={{
+                                    width: "10px",
+                                    height: "10px",
+                                    backgroundColor: step.color,
+                                    borderRadius: "50%",
+                                    display: "inline-block",
+                                  }}
+                                />
+                              }
                             />
                           ))}
                         </Steps>
