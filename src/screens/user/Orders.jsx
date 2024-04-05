@@ -105,7 +105,14 @@ const Orders = () => {
                           {orderStatusSteps.map((step, index) => (
                             <Step
                               key={index}
-                              status={step.status}
+                              status={
+                                index ===
+                                orderStatusSteps.findIndex(
+                                  (s) => s.title === o.status
+                                )
+                                  ? step.status
+                                  : ""
+                              }
                               title={step.title}
                             />
                           ))}
