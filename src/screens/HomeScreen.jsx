@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import Layout from "../components/Layout";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllPizzas } from "../actions/pizzaAction";
 import { Button } from "react-bootstrap";
-import Pizza from "../components/Pizza";
 import { Spin } from "antd";
 import CustomPizzaModal from "./CustomPizzaModal";
+
+const Pizza = lazy(() => import("../components/Pizza"));
 
 const CustomPizza = [
   {
@@ -42,7 +43,7 @@ const HomeScreen = () => {
   const pizzaState = useSelector((state) => state.getAllPizzaReducer);
   const { loading, pizzas, error } = pizzaState;
 
-  const [showModal, setShowModal] = useState(false); 
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     dispatch(getAllPizzas());
@@ -106,7 +107,11 @@ const HomeScreen = () => {
           ) : error ? (
             <h1>Error while fetching pizzas</h1>
           ) : pizzas && pizzas.length ? (
-            pizzas.map((pizza) => <Pizza key={pizza.id} pizza={pizza} />)
+            <Suspense fallback={<div>Loading...</div>}>
+              {pizzas.map((pizza) => (
+                <Pizza key={pizza.id} pizza={pizza} />
+              ))}
+            </Suspense>
           ) : (
             <h1>No pizzas available</h1>
           )}
