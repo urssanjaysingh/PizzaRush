@@ -9,11 +9,11 @@ import { Spin, Steps } from "antd";
 const { Step } = Steps;
 
 const orderStatusSteps = [
-  { title: "Placed", color: "#1890ff" },
-  { title: "Processing", color: "#52c41a" },
-  { title: "Shipped", color: "#faad14" },
-  { title: "Delivered", color: "#13c2c2" },
-  { title: "Canceled", color: "#ff4d4f" },
+  { title: "Placed" },
+  { title: "Processing" },
+  { title: "Shipped" },
+  { title: "Delivered" },
+  { title: "Canceled" },
 ];
 
 const Orders = () => {
@@ -103,21 +103,7 @@ const Orders = () => {
                           className="d-flex justify-content-between"
                         >
                           {orderStatusSteps.map((step, index) => (
-                            <Step
-                              key={index}
-                              title={step.title}
-                              icon={
-                                <div
-                                  style={{
-                                    width: "10px",
-                                    height: "10px",
-                                    backgroundColor: step.color,
-                                    borderRadius: "50%",
-                                    display: "inline-block",
-                                  }}
-                                />
-                              }
-                            />
+                            <Step key={index} title={step.title} />
                           ))}
                         </Steps>
                       </div>
