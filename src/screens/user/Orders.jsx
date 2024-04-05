@@ -9,11 +9,11 @@ import { Spin, Steps } from "antd";
 const { Step } = Steps;
 
 const orderStatusSteps = [
-  { title: "Placed", description: "Your order has been placed" },
-  { title: "Processing", description: "Your order is being processed" },
-  { title: "Shipped", description: "Your order has been shipped" },
-  { title: "Delivered", description: "Your order has been delivered" },
-  { title: "Canceled", description: "Your order has been Canceled" },
+  { title: "Placed" },
+  { title: "Processing" },
+  { title: "Shipped" },
+  { title: "Delivered" },
+  { title: "Canceled" },
 ];
 
 const Orders = () => {
@@ -101,11 +101,7 @@ const Orders = () => {
                         )}
                       >
                         {orderStatusSteps.map((step, index) => (
-                          <Step
-                            key={index}
-                            title={step.title}
-                            description={step.description}
-                          />
+                          <Step key={index} title={step.title} />
                         ))}
                       </Steps>
                       <div className="container">
