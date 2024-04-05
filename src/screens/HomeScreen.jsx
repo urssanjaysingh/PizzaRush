@@ -115,9 +115,7 @@ const HomeScreen = () => {
                 <Pizza key={pizza.id} pizza={pizza} />
               ))}
             </Suspense>
-          ) : (
-            <h1>No pizzas available</h1>
-          )}
+          ) : null}
         </div>
       </Layout>
     </>
