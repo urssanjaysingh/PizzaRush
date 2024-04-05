@@ -9,11 +9,11 @@ import { Spin, Steps } from "antd";
 const { Step } = Steps;
 
 const orderStatusSteps = [
-  { title: "Placed", status: "warning" },
-  { title: "Processing", status: "wait" },
-  { title: "Shipped", status: "process" },
-  { title: "Delivered", status: "finish" },
-  { title: "Canceled", status: "error" },
+  { title: "Placed" },
+  { title: "Processing" },
+  { title: "Shipped" },
+  { title: "Delivered" },
+  { title: "Canceled" },
 ];
 
 const Orders = () => {
@@ -103,11 +103,7 @@ const Orders = () => {
                           className="d-flex justify-content-between"
                         >
                           {orderStatusSteps.map((step, index) => (
-                            <Step
-                              key={index}
-                              status={step.status}
-                              title={step.title}
-                            />
+                            <Step key={index} title={step.title} />
                           ))}
                         </Steps>
                       </div>
