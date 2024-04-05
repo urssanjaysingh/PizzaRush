@@ -9,10 +9,10 @@ import { Spin, Steps } from "antd";
 const { Step } = Steps;
 
 const orderStatusSteps = [
-  { title: "Placed" },
-  { title: "Processing" },
-  { title: "Shipped" },
-  { title: "Delivered" },
+  { title: "Placed", status: "warning" },
+  { title: "Processing", status: "wait" },
+  { title: "Shipped", status: "process" },
+  { title: "Delivered", status: "finish" },
   { title: "Canceled", status: "error" },
 ];
 
