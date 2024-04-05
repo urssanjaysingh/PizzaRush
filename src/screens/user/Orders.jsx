@@ -95,7 +95,7 @@ const Orders = () => {
                           </tbody>
                         </table>
                       </div>
-                      <div className="order-status-container mb-4">
+                      <div className="order-status-container">
                         <Steps
                           current={orderStatusSteps.findIndex(
                             (step) => step.title === o.status
@@ -107,7 +107,7 @@ const Orders = () => {
                           ))}
                         </Steps>
                       </div>
-                      <div className="container">
+                      <div className="container mt-4">
                         <div className="row">
                           {o?.pizzas.map((p, i) => (
                             <div
