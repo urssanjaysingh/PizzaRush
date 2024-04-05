@@ -52,7 +52,9 @@ export const createPizza = (pizzaData) => async (dispatch) => {
 export const getAllPizzas = () => async (dispatch) => {
   dispatch({ type: "GET_PIZZAS_REQUEST" });
   try {
-    const res = await axios.get(`${API_URL}/api/pizzas/getAllPizzas`);
+    const res = await axios.get(
+      `${API_URL}/api/pizzas/getAllPizzas?${Date.now()}`
+    );
     dispatch({ type: "GET_PIZZAS_SUCCESS", payload: res.data });
   } catch (err) {
     dispatch({ type: "GET_PIZZAS_FAIL", payload: err });
