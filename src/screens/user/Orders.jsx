@@ -4,7 +4,17 @@ import UserMenu from "../../components/UserMenu";
 import { useDispatch } from "react-redux";
 import { getUserOrders } from "../../actions/orderAction";
 import moment from "moment";
-import { Spin } from "antd";
+import { Spin, Steps } from "antd";
+
+const { Step } = Steps;
+
+const orderStatusSteps = [
+  { title: "Placed", description: "Your order has been placed" },
+  { title: "Processing", description: "Your order is being processed" },
+  { title: "Shipped", description: "Your order has been shipped" },
+  { title: "Delivered", description: "Your order has been delivered" },
+  { title: "Canceled", description: "Your order has been Canceled" },
+];
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
@@ -76,7 +86,22 @@ const Orders = () => {
                           <tbody>
                             <tr>
                               <td>{i + 1}</td>
-                              <td>{o?.status}</td>
+                              <td>
+                                <Steps
+                                  current={orderStatusSteps.findIndex(
+                                    (step) => step.title === o.status
+                                  )}
+                                  direction="vertical"
+                                >
+                                  {orderStatusSteps.map((step, index) => (
+                                    <Step
+                                      key={index}
+                                      title={step.title}
+                                      description={step.description}
+                                    />
+                                  ))}
+                                </Steps>
+                              </td>
                               <td>{o?.buyer?.name}</td>
                               <td>{moment(o?.createdAt).fromNow()}</td>
                               <td>

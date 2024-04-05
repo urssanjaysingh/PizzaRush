@@ -23,7 +23,7 @@ const AdminOrders = () => {
   const [loading, setLoading] = useState(false);
   // eslint-disable-next-line
   const [status, setStatus] = useState([
-    "Not Process",
+    "Placed",
     "Processing",
     "Shipped",
     "Delivered",
