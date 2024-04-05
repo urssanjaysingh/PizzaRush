@@ -95,15 +95,18 @@ const Orders = () => {
                           </tbody>
                         </table>
                       </div>
-                      <Steps
-                        current={orderStatusSteps.findIndex(
-                          (step) => step.title === o.status
-                        )}
-                      >
-                        {orderStatusSteps.map((step, index) => (
-                          <Step key={index} title={step.title} />
-                        ))}
-                      </Steps>
+                      <div className="order-status-container mb-4">
+                        <Steps
+                          current={orderStatusSteps.findIndex(
+                            (step) => step.title === o.status
+                          )}
+                          className="d-flex justify-content-between"
+                        >
+                          {orderStatusSteps.map((step, index) => (
+                            <Step key={index} title={step.title} />
+                          ))}
+                        </Steps>
+                      </div>
                       <div className="container">
                         <div className="row">
                           {o?.pizzas.map((p, i) => (
