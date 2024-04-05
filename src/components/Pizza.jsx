@@ -21,7 +21,7 @@ const Pizza = ({ pizza }) => {
       >
         <Link to={`/pizza/${pizza._id}`} style={{ textDecoration: "none" }}>
           <div className="square-container">
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<div />}>
               <LazyImage src={pizza.image} alt="Card" />
             </Suspense>
           </div>
