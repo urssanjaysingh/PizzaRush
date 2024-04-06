@@ -227,7 +227,12 @@ const AdminOrders = () => {
                                             p.customPizza.price}
                                         &nbsp; &nbsp;{" "}
                                       </span>
-                                      <p>
+                                      <p
+                                        style={{
+                                          fontWeight: "bold",
+                                          marginTop: "8px",
+                                        }}
+                                      >
                                         <span style={{ color: "tomato" }}>
                                           Total: ₹
                                           {p.quantity *
