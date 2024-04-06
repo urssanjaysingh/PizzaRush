@@ -140,7 +140,7 @@ const Profile = () => {
                           passwordValid ? "" : "is-invalid"
                         }`}
                         id="password"
-                        placeholder="Password"
+                        placeholder="New Password"
                       />
                       {passwordMessage && (
                         <div className="invalid-feedback">
