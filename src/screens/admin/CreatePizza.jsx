@@ -62,6 +62,7 @@ const CreatePizza = () => {
           <h1 className="text-center" style={{ marginTop: 40 }}>
             Create Pizza
           </h1>
+          <hr />
           <div className="d-flex flex-wrap fade-in justify-content-center mt-2">
             <div className="m-1 w-100">
               <Select

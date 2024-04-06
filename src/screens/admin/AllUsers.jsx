@@ -63,6 +63,7 @@ const AllUsers = () => {
           <h1 className="text-center" style={{ marginTop: 40 }}>
             All Users
           </h1>
+          <hr />
           <div className="d-flex flex-wrap fade-in mt-2">
             <div className="m-1 w-100">
               {loading ? (
