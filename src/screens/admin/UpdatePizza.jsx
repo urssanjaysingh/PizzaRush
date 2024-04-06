@@ -38,6 +38,7 @@ const UpdatePizza = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoading(true);
       try {
         const pizzaData = await dispatch(getPizzaById(params.id));
         setId(pizzaData._id);
@@ -49,6 +50,8 @@ const UpdatePizza = () => {
       } catch (error) {
         console.error("Fetch Pizza Error:", error);
         toast.error("Failed to fetch pizza data");
+      } finally {
+        setLoading(false);
       }
     };
     fetchData();
