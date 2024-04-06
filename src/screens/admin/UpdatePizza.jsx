@@ -5,8 +5,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { Select } from "antd";
-import { Modal } from "antd";
+import { Select, Modal, Spin } from "antd";
 import {
   updatePizza,
   getPizzaById,
@@ -123,110 +122,122 @@ const UpdatePizza = () => {
             Update Pizza
           </h1>
           <div className="d-flex flex-wrap fade-in justify-content-center mt-2">
-            <div className="m-1 w-100">
-              <Select
-                className="form-control mb-3"
-                variant="default"
-                placeholder={
-                  <span style={{ color: "#777" }}>Select a category</span>
-                }
-                size="large"
-                value={category}
-                onChange={(value) => {
-                  setCategory(value);
+            {loading ? (
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  minHeight: "50vh",
                 }}
               >
-                <Option value="" disabled>
-                  Select a category
-                </Option>
-                <Option value="Vegetarian">Vegetarian</Option>
-                <Option value="Non-Vegetarian">Non-Vegetarian</Option>
-              </Select>
-              <div className="mb-3">
-                <label
-                  style={{ borderColor: "#ccc" }}
-                  className="btn btn-outline-secondary col-md-12"
-                >
-                  {image ? image.name : "Upload Image"}
-                  <input
-                    type="file"
-                    name="photo"
-                    accept="image/*"
-                    onChange={(e) => setImage(e.target.files[0])}
-                    hidden
-                  />
-                </label>
+                <Spin size="large" />
               </div>
-              <div className="mb-3">
-                {image ? (
-                  <div className="text-center">
-                    <img
-                      src={URL.createObjectURL(image)}
-                      alt="product_image"
-                      height={"200px"}
-                      className="img img-responsive"
-                    />
-                  </div>
-                ) : (
-                  <div className="text-center">
-                    <img
-                      src={existingImage}
-                      alt="product_image"
-                      height={"200px"}
-                      className="img img-responsive"
-                    />
-                  </div>
-                )}
-              </div>
-              <div className="mb-3">
-                <input
-                  type="text"
-                  value={name}
-                  placeholder="Product Name"
-                  className="form-control"
-                  onChange={(e) => setName(e.target.value)}
-                />
-              </div>
-              <div className="mb-3">
-                <textarea
+            ) : (
+              <div className="m-1 w-100">
+                <Select
                   className="form-control mb-3"
-                  placeholder="Product Description"
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <input
-                  type="number"
-                  className="form-control mb-3"
-                  placeholder="Price"
-                  value={price}
-                  onChange={(e) => setPrice(e.target.value)}
-                  required
-                />
-              </div>
-              <div className="mb-3 text-center">
-                <button
-                  type="submit"
-                  className="btn btn-primary"
-                  disabled={loading}
-                  onClick={handleUpdate}
+                  variant="default"
+                  placeholder={
+                    <span style={{ color: "#777" }}>Select a category</span>
+                  }
+                  size="large"
+                  value={category}
+                  onChange={(value) => {
+                    setCategory(value);
+                  }}
                 >
-                  {loading ? (
-                    <PulseLoader size={10} color={"#FFF"} margin={2} />
+                  <Option value="" disabled>
+                    Select a category
+                  </Option>
+                  <Option value="Vegetarian">Vegetarian</Option>
+                  <Option value="Non-Vegetarian">Non-Vegetarian</Option>
+                </Select>
+                <div className="mb-3">
+                  <label
+                    style={{ borderColor: "#ccc" }}
+                    className="btn btn-outline-secondary col-md-12"
+                  >
+                    {image ? image.name : "Upload Image"}
+                    <input
+                      type="file"
+                      name="photo"
+                      accept="image/*"
+                      onChange={(e) => setImage(e.target.files[0])}
+                      hidden
+                    />
+                  </label>
+                </div>
+                <div className="mb-3">
+                  {image ? (
+                    <div className="text-center">
+                      <img
+                        src={URL.createObjectURL(image)}
+                        alt="product_image"
+                        height={"200px"}
+                        className="img img-responsive"
+                      />
+                    </div>
                   ) : (
-                    "Update"
+                    <div className="text-center">
+                      <img
+                        src={existingImage}
+                        alt="product_image"
+                        height={"200px"}
+                        className="img img-responsive"
+                      />
+                    </div>
                   )}
-                </button>
-                <button
-                  className="btn btn-danger ms-2"
-                  onClick={() => showDeleteModal(id)}
-                >
-                  Delete
-                </button>
+                </div>
+                <div className="mb-3">
+                  <input
+                    type="text"
+                    value={name}
+                    placeholder="Product Name"
+                    className="form-control"
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </div>
+                <div className="mb-3">
+                  <textarea
+                    className="form-control mb-3"
+                    placeholder="Product Description"
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="mb-3">
+                  <input
+                    type="number"
+                    className="form-control mb-3"
+                    placeholder="Price"
+                    value={price}
+                    onChange={(e) => setPrice(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="mb-3 text-center">
+                  <button
+                    type="submit"
+                    className="btn btn-primary"
+                    disabled={loading}
+                    onClick={handleUpdate}
+                  >
+                    {loading ? (
+                      <PulseLoader size={10} color={"#FFF"} margin={2} />
+                    ) : (
+                      "Update"
+                    )}
+                  </button>
+                  <button
+                    className="btn btn-danger ms-2"
+                    onClick={() => showDeleteModal(id)}
+                  >
+                    Delete
+                  </button>
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           <Modal
