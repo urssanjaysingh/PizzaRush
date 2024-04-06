@@ -121,6 +121,7 @@ const UpdatePizza = () => {
           <h1 className="text-center" style={{ marginTop: 40 }}>
             Update Pizza
           </h1>
+          <hr />
           <div className="d-flex flex-wrap fade-in justify-content-center mt-2">
             {loading ? (
               <div
