@@ -83,13 +83,27 @@ const AllUsers = () => {
                       <table className="table table-striped table-fixed">
                         <thead className="table-header">
                           <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Verified</th>
-                            <th scope="col">Phone</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">Role</th>
+                            <th scope="col" style={{ width: "5%" }}>
+                              #
+                            </th>
+                            <th scope="col" style={{ width: "15%" }}>
+                              Name
+                            </th>
+                            <th scope="col" style={{ width: "15%" }}>
+                              Email
+                            </th>
+                            <th scope="col" style={{ width: "10%" }}>
+                              Verified
+                            </th>
+                            <th scope="col" style={{ width: "15%" }}>
+                              Phone
+                            </th>
+                            <th scope="col" style={{ width: "25%" }}>
+                              Address
+                            </th>
+                            <th scope="col" style={{ width: "15%" }}>
+                              Role
+                            </th>
                           </tr>
                         </thead>
                         <tbody>
