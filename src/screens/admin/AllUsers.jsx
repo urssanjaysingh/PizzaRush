@@ -132,7 +132,14 @@ const AllUsers = () => {
                         .map((user, index) => (
                           <tr key={user._id}>
                             <td>{index + 1}</td>
-                            <td className="col-md-2">{user.name}</td>
+                            <td
+                              style={{
+                                flex: "0 0 13.66667%",
+                                maxWidth: "13.66667%",
+                              }}
+                            >
+                              {user.name}
+                            </td>
                             <td>{user.email}</td>
                             <td>
                               {user.verified ? "Verified" : "Not Verified"}
