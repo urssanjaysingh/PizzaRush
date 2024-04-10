@@ -78,7 +78,7 @@ const AllUsers = () => {
                 </div>
               ) : users && users.length > 0 ? (
                 <div className="table-responsive">
-                  <table className="table table-striped">
+                  <table className="table table-striped table-responsive">
                     <thead className="table-header">
                       <tr>
                         <th scope="col">#</th>
