@@ -98,16 +98,24 @@ const AllUsers = () => {
                         .reverse()
                         .map((admin, index) => (
                           <tr key={admin._id} className="admin-row">
-                            <td>{index + 1}</td>
-                            <td className="admin-cell">{admin.name}</td>
-                            <td className="admin-cell">{admin.email}</td>
-                            <td className="admin-cell">
+                            <td>{index}</td>
+                            <td className="fw-bold text-primary">
+                              {admin.name}
+                            </td>
+                            <td className="fw-bold text-primary">
+                              {admin.email}
+                            </td>
+                            <td className="fw-bold text-primary">
                               {admin.verified ? "Verified" : "Not Verified"}
                             </td>
-                            <td className="admin-cell">{admin.phone}</td>
-                            <td className="admin-cell">{admin.address}</td>
-                            <td className="admin-cell">Admin</td>
-                            <td className="admin-cell">
+                            <td className="fw-bold text-primary">
+                              {admin.phone}
+                            </td>
+                            <td className="fw-bold text-primary">
+                              {admin.address}
+                            </td>
+                            <td className="fw-bold text-primary">Admin</td>
+                            <td className="fw-bold text-primary">
                               {/* Disable delete button for admins */}
                               <DeleteOutlined
                                 className="text-danger"
@@ -117,7 +125,6 @@ const AllUsers = () => {
                             </td>
                           </tr>
                         ))}
-
                       {/* Rendering Users */}
                       {users
                         .filter((user) => user.role !== 1)
