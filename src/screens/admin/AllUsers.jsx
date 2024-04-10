@@ -92,8 +92,35 @@ const AllUsers = () => {
                       </tr>
                     </thead>
                     <tbody>
+                      {/* Rendering Admins */}
                       {users
-                        .slice()
+                        .filter((user) => user.role === 1)
+                        .reverse()
+                        .map((admin, index) => (
+                          <tr key={admin._id} className="admin-row">
+                            <td>{index + 1}</td>
+                            <td className="admin-cell">{admin.name}</td>
+                            <td className="admin-cell">{admin.email}</td>
+                            <td className="admin-cell">
+                              {admin.verified ? "Verified" : "Not Verified"}
+                            </td>
+                            <td className="admin-cell">{admin.phone}</td>
+                            <td className="admin-cell">{admin.address}</td>
+                            <td className="admin-cell">Admin</td>
+                            <td className="admin-cell">
+                              {/* Disable delete button for admins */}
+                              <DeleteOutlined
+                                className="text-danger"
+                                onClick={() => showDeleteModal(admin._id)}
+                                disabled
+                              />
+                            </td>
+                          </tr>
+                        ))}
+
+                      {/* Rendering Users */}
+                      {users
+                        .filter((user) => user.role !== 1)
                         .reverse()
                         .map((user, index) => (
                           <tr key={user._id}>
@@ -107,10 +134,12 @@ const AllUsers = () => {
                             <td>{user.address}</td>
                             <td>{user.role === 1 ? "Admin" : "User"}</td>
                             <td>
-                              <DeleteOutlined
-                                className="text-danger"
-                                onClick={() => showDeleteModal(user._id)}
-                              />
+                              {user.role !== 1 && (
+                                <DeleteOutlined
+                                  className="text-danger"
+                                  onClick={() => showDeleteModal(user._id)}
+                                />
+                              )}
                             </td>
                           </tr>
                         ))}
