@@ -80,7 +80,7 @@ const AllUsers = () => {
                   <div className="border-0 order-container" key={index}>
                     <hr className="mb-0" />
                     <div className="table-responsive">
-                      <table className="table table-striped table-fixed">
+                      <table className="table table-striped">
                         <thead className="table-header">
                           <tr>
                             <th scope="col" style={{ width: "5%" }}>
