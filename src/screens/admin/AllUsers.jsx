@@ -92,23 +92,28 @@ const AllUsers = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {users.map((user, index) => (
-                        <tr key={user._id}>
-                          <td>{index + 1}</td>
-                          <td>{user.name}</td>
-                          <td>{user.email}</td>
-                          <td>{user.verified ? "Verified" : "Not Verified"}</td>
-                          <td>{user.phone}</td>
-                          <td>{user.address}</td>
-                          <td>{user.role === 1 ? "Admin" : "User"}</td>
-                          <td>
-                            <DeleteOutlined
-                              className="text-danger"
-                              onClick={() => showDeleteModal(user._id)}
-                            />
-                          </td>
-                        </tr>
-                      ))}
+                      {users
+                        .slice()
+                        .reverse()
+                        .map((user, index) => (
+                          <tr key={user._id}>
+                            <td>{index + 1}</td>
+                            <td>{user.name}</td>
+                            <td>{user.email}</td>
+                            <td>
+                              {user.verified ? "Verified" : "Not Verified"}
+                            </td>
+                            <td>{user.phone}</td>
+                            <td>{user.address}</td>
+                            <td>{user.role === 1 ? "Admin" : "User"}</td>
+                            <td>
+                              <DeleteOutlined
+                                className="text-danger"
+                                onClick={() => showDeleteModal(user._id)}
+                              />
+                            </td>
+                          </tr>
+                        ))}
                     </tbody>
                   </table>
                 </div>
