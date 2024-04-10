@@ -99,7 +99,7 @@ const AllUsers = () => {
                         .map((admin, index) => (
                           <tr key={admin._id} className="admin-row">
                             <td>{index}</td>
-                            <td className="fw-bold text-primary">
+                            <td className="fw-bold text-primary col-md-2">
                               {admin.name}
                             </td>
                             <td className="fw-bold text-primary">
@@ -132,7 +132,7 @@ const AllUsers = () => {
                         .map((user, index) => (
                           <tr key={user._id}>
                             <td>{index + 1}</td>
-                            <td>{user.name}</td>
+                            <td className="col-md-2">{user.name}</td>
                             <td>{user.email}</td>
                             <td>
                               {user.verified ? "Verified" : "Not Verified"}
