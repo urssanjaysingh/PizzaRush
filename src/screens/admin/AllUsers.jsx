@@ -80,7 +80,7 @@ const AllUsers = () => {
                   <div className="border-0 order-container" key={index}>
                     <hr className="mb-0" />
                     <div className="table-responsive">
-                      <table className="table table-striped">
+                      <table className="table table-striped table-fixed">
                         <thead className="table-header">
                           <tr>
                             <th scope="col">#</th>
@@ -93,21 +93,15 @@ const AllUsers = () => {
                           </tr>
                         </thead>
                         <tbody>
-                          <tr>
+                          <tr key={user._id}>
                             <td>{index + 1}</td>
-                            <td style={{ whiteSpace: "pre-wrap" }}>
-                              {user.name}
-                            </td>
-                            <td style={{ whiteSpace: "pre-wrap" }}>
-                              {user.email}
-                            </td>
+                            <td>{user.name}</td>
+                            <td>{user.email}</td>
                             <td>
                               {user.verified ? "Verified" : "Not Verified"}
                             </td>
                             <td>{user.phone}</td>
-                            <td style={{ whiteSpace: "pre-wrap" }}>
-                              {user.address}
-                            </td>
+                            <td>{user.address}</td>
                             <td>{user.role === 1 ? "Admin" : "User"}</td>
                           </tr>
                         </tbody>
