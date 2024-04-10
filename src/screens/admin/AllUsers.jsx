@@ -5,6 +5,7 @@ import { deleteUserById, getAllUsers } from "../../actions/userAction";
 import AdminMenu from "../../components/AdminMenu";
 import Layout from "../../components/Layout";
 import { toast } from "react-toastify";
+import { DeleteOutlined } from "@ant-design/icons";
 
 const AllUsers = () => {
   const dispatch = useDispatch();
@@ -76,67 +77,48 @@ const AllUsers = () => {
                   <Spin size="large" />
                 </div>
               ) : users && users.length > 0 ? (
-                users.map((user, index) => (
-                  <div className="border-0 order-container" key={index}>
-                    <hr className="mb-0" />
-                    <div className="table-responsive">
-                      <table className="table table-striped">
-                        <thead className="table-header">
-                          <tr>
-                            <th scope="col" style={{ width: "5%" }}>
-                              #
-                            </th>
-                            <th scope="col" style={{ width: "15%" }}>
-                              Name
-                            </th>
-                            <th scope="col" style={{ width: "15%" }}>
-                              Email
-                            </th>
-                            <th scope="col" style={{ width: "10%" }}>
-                              Verified
-                            </th>
-                            <th scope="col" style={{ width: "15%" }}>
-                              Phone
-                            </th>
-                            <th scope="col" style={{ width: "25%" }}>
-                              Address
-                            </th>
-                            <th scope="col" style={{ width: "15%" }}>
-                              Role
-                            </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr key={user._id}>
-                            <td>{index + 1}</td>
-                            <td>{user.name}</td>
-                            <td>{user.email}</td>
-                            <td>
-                              {user.verified ? "Verified" : "Not Verified"}
-                            </td>
-                            <td>{user.phone}</td>
-                            <td>{user.address}</td>
-                            <td>{user.role === 1 ? "Admin" : "User"}</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <div className="mb-3 text-center">
-                      <button
-                        className="btn btn-danger ms-2"
-                        onClick={() => showDeleteModal(user._id)}
-                      >
-                        Delete
-                      </button>
-                    </div>
-                  </div>
-                ))
+                <div className="table-responsive">
+                  <table className="table table-striped">
+                    <thead className="table-header">
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Verified</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Role</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {users.map((user, index) => (
+                        <tr key={user._id}>
+                          <td>{index + 1}</td>
+                          <td>{user.name}</td>
+                          <td>{user.email}</td>
+                          <td>{user.verified ? "Verified" : "Not Verified"}</td>
+                          <td>{user.phone}</td>
+                          <td>{user.address}</td>
+                          <td>{user.role === 1 ? "Admin" : "User"}</td>
+                          <td>
+                            <DeleteOutlined
+                              className="text-danger"
+                              onClick={() => showDeleteModal(user._id)}
+                            />
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               ) : (
                 <div className="text-center">No users found.</div>
               )}
               <Modal
                 title="Confirm Delete"
-                open={isDeleteModalOpen}
+                visible={isDeleteModalOpen}
+                onCancel={hideDeleteModal}
                 footer={[
                   <button
                     key="no"
@@ -153,7 +135,6 @@ const AllUsers = () => {
                     Yes
                   </button>,
                 ]}
-                onCancel={hideDeleteModal}
               >
                 Are you sure you want to delete this user?
               </Modal>
