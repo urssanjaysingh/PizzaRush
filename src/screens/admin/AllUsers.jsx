@@ -95,13 +95,19 @@ const AllUsers = () => {
                         <tbody>
                           <tr>
                             <td>{index + 1}</td>
-                            <td>{user.name}</td>
-                            <td>{user.email}</td>
+                            <td style={{ whiteSpace: "pre-wrap" }}>
+                              {user.name}
+                            </td>
+                            <td style={{ whiteSpace: "pre-wrap" }}>
+                              {user.email}
+                            </td>
                             <td>
                               {user.verified ? "Verified" : "Not Verified"}
                             </td>
                             <td>{user.phone}</td>
-                            <td>{user.address}</td>
+                            <td style={{ whiteSpace: "pre-wrap" }}>
+                              {user.address}
+                            </td>
                             <td>{user.role === 1 ? "Admin" : "User"}</td>
                           </tr>
                         </tbody>
