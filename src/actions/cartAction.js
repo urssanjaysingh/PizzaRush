@@ -58,10 +58,15 @@ export const updateCartItem = (updatedPizza) => (dispatch, getState) => {
 };
 
 export const deleteFromCart = (pizza) => (dispatch, getState) => {
-  dispatch({ type: "DELETE_FROM_CART", payload: pizza });
+  const { description } = pizza;
+  const updatedCartItems = getState().cartReducer.cartItems.filter(
+    (item) => item.description !== description
+  );
+
+  dispatch({ type: "DELETE_FROM_CART", payload: updatedCartItems });
   toast.success("Pizza Removed From Cart");
-  const cartItems = getState().cartReducer.cartItems;
-  localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+  localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
 };
 
 export const emptyCart = () => (dispatch) => {
