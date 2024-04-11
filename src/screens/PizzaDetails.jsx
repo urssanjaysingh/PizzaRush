@@ -14,6 +14,7 @@ const PizzaDetails = () => {
 
   const [loading, setLoading] = useState(false);
   const [pizza, setPizza] = useState("");
+  const [loadingRelated, setLoadingRelated] = useState(false);
   const [relatedPizzas, setRelatedPizzas] = useState([]);
   const [show, setShow] = useState(false);
   const [selectedPizza, setSelectedPizza] = useState(null);
@@ -42,13 +43,13 @@ const PizzaDetails = () => {
   useEffect(() => {
     const fetchRelatedPizzas = async () => {
       try {
-        setLoading(true);
+        setLoadingRelated(true);
         const relatedData = await dispatch(getRelatedPizzas(pizza?.category));
         setRelatedPizzas(relatedData.relatedPizzas);
       } catch (error) {
         console.error("Fetch Related Pizzas Error:", error);
       } finally {
-        setLoading(false);
+        setLoadingRelated(false);
       }
     };
     if (pizza) {
@@ -117,7 +118,7 @@ const PizzaDetails = () => {
               <hr />
               <div className="col-md-12">
                 <h4 className="text-center">Similar Pizzas</h4>
-                {loading ? (
+                {loadingRelated ? (
                   <div style={{ display: "flex", justifyContent: "center" }}>
                     <Spin size="large" />
                   </div>
