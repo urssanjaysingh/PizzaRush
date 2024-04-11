@@ -3,6 +3,7 @@ import { addToCart } from "../actions/cartAction";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 import React, { Suspense, lazy } from "react";
+import LazyLoad from "react-lazyload";
 
 const LazyImage = lazy(() => import("./LazyImage"));
 
@@ -21,9 +22,11 @@ const Pizza = ({ pizza }) => {
       >
         <Link to={`/pizza/${pizza._id}`} style={{ textDecoration: "none" }}>
           <div className="square-container">
-            <Suspense fallback={<div>Loading...</div>}>
-              <LazyImage src={pizza.image} alt="Card" />
-            </Suspense>
+            <LazyLoad offset={100} once>
+              <Suspense fallback={<div>Loading...</div>}>
+                <LazyImage src={pizza.image} alt="Card" />
+              </Suspense>
+            </LazyLoad>
           </div>
         </Link>
         <div className="card-body">

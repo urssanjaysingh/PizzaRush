@@ -5,6 +5,7 @@ import { getAllPizzas } from "../actions/pizzaAction";
 import { Button } from "react-bootstrap";
 import { Spin } from "antd";
 import CustomPizzaModal from "./CustomPizzaModal";
+import LazyLoad from "react-lazyload";
 
 const Pizza = lazy(() => import("../components/Pizza"));
 
@@ -110,11 +111,13 @@ const HomeScreen = () => {
               <Spin size="large" />
             </div>
           ) : pizzas.length ? (
-            <Suspense fallback={<div>Loading...</div>}>
-              {pizzas.map((pizza) => (
-                <Pizza key={pizza.id} pizza={pizza} />
-              ))}
-            </Suspense>
+            <LazyLoad offset={100} once>
+              <Suspense fallback={<div>Loading...</div>}>
+                {pizzas.map((pizza) => (
+                  <Pizza key={pizza.id} pizza={pizza} />
+                ))}
+              </Suspense>
+            </LazyLoad>
           ) : null}
         </div>
       </Layout>
