@@ -5,7 +5,7 @@ import { deleteUserById, getAllUsers } from "../../actions/userAction";
 import AdminMenu from "../../components/AdminMenu";
 import Layout from "../../components/Layout";
 import { toast } from "react-toastify";
-import { DeleteOutlined } from "@ant-design/icons";
+import { DeleteOutlined, StopOutlined } from "@ant-design/icons";
 
 const AllUsers = () => {
   const dispatch = useDispatch();
@@ -116,12 +116,7 @@ const AllUsers = () => {
                             </td>
                             <td className="fw-bold text-primary">Admin</td>
                             <td className="fw-bold text-primary">
-                              {/* Disable delete button for admins */}
-                              <DeleteOutlined
-                                className="text-danger"
-                                onClick={() => showDeleteModal(admin._id)}
-                                disabled
-                              />
+                              <StopOutlined className="text-muted" />
                             </td>
                           </tr>
                         ))}
