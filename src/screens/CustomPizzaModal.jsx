@@ -4,6 +4,8 @@ import { addToCart } from "../actions/cartAction";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
+const { v4: uuidv4 } = require("uuid");
+
 // Styled components for custom styles
 const StyledModal = styled(Modal)`
   .modal-content {
@@ -41,6 +43,7 @@ const CustomPizzaModal = ({ show, handleClose, customPizzaData }) => {
     }
 
     const customPizza = {
+      _id: uuidv4(),
       name: "Custom Pizza",
       category: "custom",
       price: 199,
