@@ -62,48 +62,40 @@ export const deleteFromCart = (pizza) => (dispatch, getState) => {
     cartReducer: { cartItems },
   } = getState();
 
-  if (pizza.category === "custom") {
-    const indexToRemove = cartItems.findIndex(
-      (item) =>
-        item.category === "custom" &&
-        item.name === pizza.name &&
-        item.price === pizza.price &&
-        item.image === pizza.image &&
-        item.description === pizza.description
-    );
+  console.log("Current cartItems:", cartItems);
 
-    if (indexToRemove !== -1) {
-      dispatch({ type: "DELETE_FROM_CART", payload: pizza });
+  const indexToRemove = cartItems.findIndex(
+    (item) => item.description === pizza.description
+  );
 
+  console.log("Index to remove:", indexToRemove);
+
+  if (indexToRemove !== -1) {
+    dispatch({ type: "DELETE_FROM_CART", payload: pizza });
+
+    if (pizza.category === "custom") {
+      console.log("Custom Pizza Removed From Cart");
       toast.success("Custom Pizza Removed From Cart");
-
-      const updatedCartItems = [
-        ...cartItems.slice(0, indexToRemove),
-        ...cartItems.slice(indexToRemove + 1),
-      ];
-
-      localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
     } else {
-      toast.error("Custom Pizza not found in cart");
+      console.log("Predefined Pizza Removed From Cart");
+      toast.success("Predefined Pizza Removed From Cart");
     }
+
+    const updatedCartItems = [
+      ...cartItems.slice(0, indexToRemove),
+      ...cartItems.slice(indexToRemove + 1),
+    ];
+
+    localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
+
+    console.log("Updated cartItems:", updatedCartItems);
   } else {
-    const indexToRemove = cartItems.findIndex(
-      (item) => item.description === pizza.description
-    );
-
-    if (indexToRemove !== -1) {
-      dispatch({ type: "DELETE_FROM_CART", payload: pizza });
-
-      toast.success("Pizza Removed From Cart");
-
-      const updatedCartItems = [
-        ...cartItems.slice(0, indexToRemove),
-        ...cartItems.slice(indexToRemove + 1),
-      ];
-
-      localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
+    if (pizza.category === "custom") {
+      console.log("Custom Pizza not found in cart");
+      toast.error("Custom Pizza not found in cart");
     } else {
-      toast.error("Pizza not found in cart");
+      console.log("Predefined Pizza not found in cart");
+      toast.error("Predefined Pizza not found in cart");
     }
   }
 };
