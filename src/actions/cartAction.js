@@ -58,15 +58,28 @@ export const updateCartItem = (updatedPizza) => (dispatch, getState) => {
 };
 
 export const deleteFromCart = (pizza) => (dispatch, getState) => {
-  const { description } = pizza;
-  const updatedCartItems = getState().cartReducer.cartItems.filter(
-    (item) => item.description !== description
+  const {
+    cartReducer: { cartItems },
+  } = getState();
+
+  const indexToRemove = cartItems.findIndex(
+    (item) => item.description === pizza.description
   );
 
-  dispatch({ type: "DELETE_FROM_CART", payload: updatedCartItems });
-  toast.success("Pizza Removed From Cart");
+  if (indexToRemove !== -1) {
+    dispatch({ type: "DELETE_FROM_CART", payload: pizza });
 
-  localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
+    toast.success("Pizza Removed From Cart");
+
+    const updatedCartItems = [
+      ...cartItems.slice(0, indexToRemove),
+      ...cartItems.slice(indexToRemove + 1),
+    ];
+
+    localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
+  } else {
+    toast.error("Pizza not found in cart");
+  }
 };
 
 export const emptyCart = () => (dispatch) => {
