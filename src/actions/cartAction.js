@@ -62,23 +62,61 @@ export const deleteFromCart = (pizza) => (dispatch, getState) => {
     cartReducer: { cartItems },
   } = getState();
 
-  const indexToRemove = cartItems.findIndex(
-    (item) => item.description === pizza.description
-  );
+  // Check if the pizza is a custom pizza
+  if (pizza.category === "custom") {
+    // Find the index of the custom pizza to be removed
+    const indexToRemove = cartItems.findIndex(
+      (item) =>
+        item.category === "custom" &&
+        item.name === pizza.name &&
+        item.price === pizza.price &&
+        item.image === pizza.image
+    );
 
-  if (indexToRemove !== -1) {
-    dispatch({ type: "DELETE_FROM_CART", payload: pizza });
+    if (indexToRemove !== -1) {
+      // Dispatch action to delete the custom pizza from the cart
+      dispatch({ type: "DELETE_FROM_CART", payload: pizza });
 
-    toast.success("Pizza Removed From Cart");
+      // Notify user
+      toast.success("Custom Pizza Removed From Cart");
 
-    const updatedCartItems = [
-      ...cartItems.slice(0, indexToRemove),
-      ...cartItems.slice(indexToRemove + 1),
-    ];
+      // Remove the custom pizza from the cartItems array
+      const updatedCartItems = [
+        ...cartItems.slice(0, indexToRemove),
+        ...cartItems.slice(indexToRemove + 1),
+      ];
 
-    localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
+      // Update local storage
+      localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
+    } else {
+      // If the custom pizza is not found in the cart, notify the user accordingly
+      toast.error("Custom Pizza not found in cart");
+    }
   } else {
-    toast.error("Pizza not found in cart");
+    // For regular pizzas, perform comparison based on description
+    const indexToRemove = cartItems.findIndex(
+      (item) => item.description === pizza.description
+    );
+
+    if (indexToRemove !== -1) {
+      // Dispatch action to delete the item from the cart
+      dispatch({ type: "DELETE_FROM_CART", payload: pizza });
+
+      // Notify user
+      toast.success("Pizza Removed From Cart");
+
+      // Remove the item from the cartItems array
+      const updatedCartItems = [
+        ...cartItems.slice(0, indexToRemove),
+        ...cartItems.slice(indexToRemove + 1),
+      ];
+
+      // Update local storage
+      localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
+    } else {
+      // If the pizza is not found in the cart, notify the user accordingly
+      toast.error("Pizza not found in cart");
+    }
   }
 };
 
