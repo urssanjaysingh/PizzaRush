@@ -30,7 +30,16 @@ const CustomPizzaModal = ({ show, handleClose, customPizzaData }) => {
   };
 
   const handleAddToCart = () => {
-    // Formulate the custom pizza object
+    if (
+      !pizzaBase ||
+      !pizzaSauce ||
+      !cheeseType ||
+      selectedVeggies.length === 0
+    ) {
+      alert("Please fill in all fields to add custom pizza to cart.");
+      return;
+    }
+
     const customPizza = {
       name: "Custom Pizza",
       category: "custom",
