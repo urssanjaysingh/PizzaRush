@@ -58,46 +58,10 @@ export const updateCartItem = (updatedPizza) => (dispatch, getState) => {
 };
 
 export const deleteFromCart = (pizza) => (dispatch, getState) => {
-  const {
-    cartReducer: { cartItems },
-  } = getState();
-
-  console.log("Current cartItems:", cartItems);
-
-  const indexToRemove = cartItems.findIndex(
-    (item) => item.description === pizza.description
-  );
-
-  console.log("Index to remove:", indexToRemove);
-
-  if (indexToRemove !== -1) {
-    dispatch({ type: "DELETE_FROM_CART", payload: pizza });
-
-    if (pizza.category === "custom") {
-      console.log("Custom Pizza Removed From Cart");
-      toast.success("Custom Pizza Removed From Cart");
-    } else {
-      console.log("Predefined Pizza Removed From Cart");
-      toast.success("Predefined Pizza Removed From Cart");
-    }
-
-    const updatedCartItems = [
-      ...cartItems.slice(0, indexToRemove),
-      ...cartItems.slice(indexToRemove + 1),
-    ];
-
-    localStorage.setItem("cartItems", JSON.stringify(updatedCartItems));
-
-    console.log("Updated cartItems:", updatedCartItems);
-  } else {
-    if (pizza.category === "custom") {
-      console.log("Custom Pizza not found in cart");
-      toast.error("Custom Pizza not found in cart");
-    } else {
-      console.log("Predefined Pizza not found in cart");
-      toast.error("Predefined Pizza not found in cart");
-    }
-  }
+  dispatch({ type: "DELETE_FROM_CART", payload: pizza });
+  toast.success("Pizza Removed From Cart");
+  const cartItems = getState().cartReducer.cartItems;
+  localStorage.setItem("cartItems", JSON.stringify(cartItems));
 };
 
 export const emptyCart = () => (dispatch) => {
