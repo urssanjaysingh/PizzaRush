@@ -326,7 +326,7 @@ const CartScreen = () => {
               <div className="mt-2">
                 <div className="alert alert-warning" role="alert">
                   Payment is currently in testing mode. Please use the following
-                  card numbers provided
+                  card numbers provided{" "}
                   <a
                     href="https://developer.paypal.com/braintree/docs/guides/credit-cards/testing-go-live/php/"
                     target="_blank"
