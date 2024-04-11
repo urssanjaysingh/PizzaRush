@@ -326,7 +326,11 @@ const CartScreen = () => {
               <div className="mt-2">
                 {clientToken && cartItems?.length > 0 && (
                   <>
-                    <div className="alert alert-warning" role="alert">
+                    <div
+                      className="alert alert-warning"
+                      role="alert"
+                      style={{ fontSize: "small" }}
+                    >
                       Payment is currently in testing mode. Please use the
                       following card numbers provided{" "}
                       <a
