@@ -324,20 +324,20 @@ const CartScreen = () => {
                 </div>
               )}
               <div className="mt-2">
-                <div className="alert alert-warning" role="alert">
-                  Payment is currently in testing mode. Please use the following
-                  card numbers provided{" "}
-                  <a
-                    href="https://developer.paypal.com/braintree/docs/guides/credit-cards/testing-go-live/php/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    here
-                  </a>
-                  .
-                </div>
                 {clientToken && cartItems?.length > 0 && (
                   <>
+                    <div className="alert alert-warning" role="alert">
+                      Payment is currently in testing mode. Please use the
+                      following card numbers provided{" "}
+                      <a
+                        href="https://developer.paypal.com/braintree/docs/guides/credit-cards/testing-go-live/php/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        here
+                      </a>
+                      .
+                    </div>
                     <DropIn
                       options={{
                         authorization: clientToken,
