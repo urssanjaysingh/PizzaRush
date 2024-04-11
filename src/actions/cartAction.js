@@ -70,7 +70,8 @@ export const deleteFromCart = (pizza) => (dispatch, getState) => {
         item.category === "custom" &&
         item.name === pizza.name &&
         item.price === pizza.price &&
-        item.image === pizza.image
+        item.image === pizza.image &&
+        item.description === pizza.description
     );
 
     if (indexToRemove !== -1) {
@@ -93,7 +94,7 @@ export const deleteFromCart = (pizza) => (dispatch, getState) => {
       toast.error("Custom Pizza not found in cart");
     }
   } else {
-    // For regular pizzas, perform comparison based on description
+    // For predefined pizzas, perform comparison based on description
     const indexToRemove = cartItems.findIndex(
       (item) => item.description === pizza.description
     );
