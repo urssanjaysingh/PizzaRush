@@ -82,7 +82,7 @@ const PizzaDetails = () => {
             </div>
           ) : (
             <>
-              <div className="row product mt-4 mb-4">
+              <div className="row product justify-content-center mt-4 mb-4">
                 <div className="col-md-6" style={{ width: "28rem" }}>
                   <img
                     src={pizza.image}
@@ -90,7 +90,7 @@ const PizzaDetails = () => {
                     alt={pizza.name}
                   />
                 </div>
-                <div className="col-md-6 d-flex align-items-center justify-content-center">
+                <div className="col-md-6 d-flex align-items-center">
                   <div className="mt-4 mt-4 mt-md-0">
                     <h2 className="main-product-title mt-2 mt-md-0">
                       {pizza.name}
