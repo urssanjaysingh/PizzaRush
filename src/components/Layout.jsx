@@ -23,8 +23,9 @@ const Layout = ({ children, title, description, keywords, author }) => {
 };
 
 Layout.defaultProps = {
-  title: "PizzaRush",
-  description: "A pizza delivery application.",
+  title: "PizzaRush - Pizza Delivery Application",
+  description:
+    "Indulge in a delightful culinary journey with PizzaRush! Satisfy your pizza cravings with our mouthwatering selection of artisanal pizzas crafted with the finest ingredients. With our user-friendly ordering platform and efficient delivery service, you can order with confidence at PizzaRush, your go-to pizza destination for every occasion.",
   keywords: "mern, react, node, mongodb",
   author: "Sanjay Singh",
 };
