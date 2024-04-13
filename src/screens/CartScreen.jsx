@@ -146,11 +146,17 @@ const CartScreen = () => {
                     >
                       <div className="row">
                         <div className="col-md-3 d-flex align-items-center justify-content-center">
-                          <img
-                            src={process.env.PUBLIC_URL + pizza.image}
-                            className="img-fluid rounded-start"
-                            alt={pizza.name}
-                          />
+                          <div
+                            className="img-container"
+                            style={{ height: "100%", maxWidth: "100%" }}
+                          >
+                            <img
+                              src={process.env.PUBLIC_URL + pizza.image}
+                              className="img-fluid rounded-start h-100 w-auto"
+                              alt={pizza.name}
+                              style={{ objectFit: "cover" }}
+                            />
+                          </div>
                         </div>
                         <div className="col-md-9 d-flex align-items-center justify-content-center">
                           <div
