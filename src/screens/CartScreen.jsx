@@ -140,8 +140,9 @@ const CartScreen = () => {
                   .reverse()
                   .map((pizza, index) => (
                     <div
-                      className="card product-card m-2 bg-light"
-                      style={{ width: "18rem" }}
+                      className="card mb-3 d-flex justify-content-center"
+                      style={{ paddingLeft: 0 }}
+                      key={index}
                     >
                       <div className="row">
                         <div className="col-md-3 d-flex align-items-center justify-content-center">
