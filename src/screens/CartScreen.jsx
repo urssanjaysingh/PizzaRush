@@ -158,11 +158,8 @@ const CartScreen = () => {
                             />
                           </div>
                         </div>
-                        <div className="col-md-7 d-flex align-items-center">
-                          <div
-                            className="card-body mt-3 d-flex flex-column justify-content-between"
-                            style={{ margin: "auto 0" }}
-                          >
+                        <div className="col-md-7 d-flex justify-content-center">
+                          <div className="card-body mt-3 d-flex flex-column justify-content-between align-items-center">
                             <p
                               style={{
                                 margin: 0,
@@ -178,7 +175,7 @@ const CartScreen = () => {
                             >
                               {pizza.description}
                             </p>
-                            <div className="quantity-controls d-flex justify-content-between align-items-center">
+                            <div className="quantity-controls">
                               <span
                                 style={{
                                   fontWeight: "bold",
