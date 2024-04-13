@@ -140,13 +140,22 @@ const CartScreen = () => {
                   .reverse()
                   .map((pizza, index) => (
                     <div
-                      className="card mb-3 d-flex justify-content-center"
-                      style={{ paddingLeft: 0 }}
-                      key={index}
+                      className="card product-card m-2 bg-light"
+                      style={{ width: "18rem" }}
                     >
                       <div className="row">
-                        <div className="col-md-12">
-                          <div className="card-body mt-3">
+                        <div className="square-container">
+                          <img
+                            src={process.env.PUBLIC_URL + pizza.image}
+                            className="img-fluid rounded-start"
+                            alt={pizza.name}
+                          />
+                        </div>
+                        <div className="col-md-9 d-flex align-items-center justify-content-center">
+                          <div
+                            className="card-body mt-3"
+                            style={{ height: "100%" }}
+                          >
                             <p
                               style={{
                                 margin: 0,
@@ -163,31 +172,93 @@ const CartScreen = () => {
                               {pizza.description}
                             </p>
                             <div className="quantity-controls">
-                              {/* Quantity controls */}
-                            </div>
-                            <div className="text-center">
+                              <span
+                                style={{
+                                  fontWeight: "bold",
+                                  marginTop: "8px",
+                                  color: "lightSalmon",
+                                }}
+                              >
+                                Quantity:
+                              </span>
                               <button
                                 className="btn"
                                 style={{ border: "none", cursor: "pointer" }}
-                                onClick={() => dispatch(deleteFromCart(pizza))}
+                                onClick={() => decreaseQuantity(pizza)} // Decrease quantity button
                               >
                                 <FontAwesomeIcon
-                                  icon={faTrash}
+                                  icon={faMinusCircle}
                                   style={{
                                     fontSize: "1.2rem",
-                                    color: "#FF4444",
+                                    color: "#FF8888",
                                   }}
                                 />
                               </button>
+                              <span
+                                className="quantity"
+                                style={{
+                                  fontWeight: "bold",
+                                  marginTop: "8px",
+                                }}
+                              >
+                                {pizza.quantity}
+                              </span>
+                              <button
+                                className="btn"
+                                style={{ border: "none", cursor: "pointer" }}
+                                onClick={() => increaseQuantity(pizza)} // Increase quantity button
+                              >
+                                <FontAwesomeIcon
+                                  icon={faPlusCircle}
+                                  style={{
+                                    fontSize: "1.2rem",
+                                    color: "green",
+                                  }}
+                                />
+                                {/* Adjusted icon size and color */}
+                              </button>{" "}
+                              <p>
+                                <span
+                                  style={{
+                                    fontWeight: "bold",
+                                    marginTop: "8px",
+                                    color: "salmon",
+                                  }}
+                                >
+                                  Price: ₹{pizza.price}
+                                </span>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <span
+                                  style={{
+                                    fontWeight: "bold",
+                                    marginTop: "8px",
+                                    color: "tomato",
+                                  }}
+                                >
+                                  Total: ₹{pizza.price * pizza.quantity}{" "}
+                                </span>{" "}
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <button
+                                  className="btn"
+                                  style={{
+                                    border: "none",
+                                    cursor: "pointer",
+                                  }}
+                                  onClick={() =>
+                                    dispatch(deleteFromCart(pizza))
+                                  }
+                                >
+                                  <FontAwesomeIcon
+                                    icon={faTrash}
+                                    style={{
+                                      fontSize: "1.2rem",
+                                      color: "#FF4444",
+                                    }}
+                                  />
+                                </button>
+                              </p>
                             </div>
                           </div>
-                        </div>
-                        <div className="col-md-12 d-flex align-items-center justify-content-center">
-                          <img
-                            src={process.env.PUBLIC_URL + pizza.image}
-                            className="img-fluid rounded-start"
-                            alt={pizza.name}
-                          />
                         </div>
                       </div>
                     </div>
@@ -195,7 +266,6 @@ const CartScreen = () => {
               </div>
             </div>
           </div>
-
           <div className="col-md-4 text-center">
             <h2>Cart Summary</h2>
             <p>Checkout | Payment</p>
