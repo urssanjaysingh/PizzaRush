@@ -98,7 +98,10 @@ const HomeScreen = () => {
           </div>
         </section>
 
-        <div className="d-flex flex-wrap fade-in justify-content-center mt-2">
+        <div
+          className="d-flex flex-wrap fade-in justify-content-center mt-2"
+          style={{ marginLeft: "-5px", marginRight: "-5px" }}
+        >
           {loading ? (
             <div
               style={{
@@ -112,7 +115,9 @@ const HomeScreen = () => {
           ) : pizzas.length ? (
             <Suspense fallback={<div>Loading...</div>}>
               {pizzas.map((pizza) => (
-                <Pizza key={pizza.id} pizza={pizza} />
+                <div key={pizza.id} className="col-sm-6 col-md-4 col-lg-3 p-2">
+                  <Pizza pizza={pizza} />
+                </div>
               ))}
             </Suspense>
           ) : null}
