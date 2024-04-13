@@ -144,116 +144,120 @@ const CartScreen = () => {
                       style={{ width: "18rem" }}
                     >
                       <div className="row">
-                        <div className="square-container">
+                        <div className="col-md-3 d-flex align-items-center justify-content-center">
                           <img
                             src={process.env.PUBLIC_URL + pizza.image}
                             className="img-fluid rounded-start"
                             alt={pizza.name}
                           />
                         </div>
-                        <div
-                          className="card-body mt-3"
-                          style={{ height: "100%" }}
-                        >
-                          <p
-                            style={{
-                              margin: 0,
-                              fontWeight: "bold",
-                              fontSize: "20px",
-                            }}
+                        <div className="col-md-9 d-flex align-items-center justify-content-center">
+                          <div
+                            className="card-body mt-3"
+                            style={{ height: "100%" }}
                           >
-                            {pizza.name}
-                          </p>
-                          <p
-                            className="product-description"
-                            style={{ textAlign: "justify" }}
-                          >
-                            {pizza.description}
-                          </p>
-                          <div className="quantity-controls">
-                            <span
+                            <p
                               style={{
+                                margin: 0,
                                 fontWeight: "bold",
-                                marginTop: "8px",
-                                color: "lightSalmon",
+                                fontSize: "20px",
                               }}
                             >
-                              Quantity:
-                            </span>
-                            <button
-                              className="btn"
-                              style={{ border: "none", cursor: "pointer" }}
-                              onClick={() => decreaseQuantity(pizza)} // Decrease quantity button
+                              {pizza.name}
+                            </p>
+                            <p
+                              className="product-description"
+                              style={{ textAlign: "justify" }}
                             >
-                              <FontAwesomeIcon
-                                icon={faMinusCircle}
-                                style={{
-                                  fontSize: "1.2rem",
-                                  color: "#FF8888",
-                                }}
-                              />
-                            </button>
-                            <span
-                              className="quantity"
-                              style={{
-                                fontWeight: "bold",
-                                marginTop: "8px",
-                              }}
-                            >
-                              {pizza.quantity}
-                            </span>
-                            <button
-                              className="btn"
-                              style={{ border: "none", cursor: "pointer" }}
-                              onClick={() => increaseQuantity(pizza)} // Increase quantity button
-                            >
-                              <FontAwesomeIcon
-                                icon={faPlusCircle}
-                                style={{
-                                  fontSize: "1.2rem",
-                                  color: "green",
-                                }}
-                              />
-                              {/* Adjusted icon size and color */}
-                            </button>{" "}
-                            <p>
+                              {pizza.description}
+                            </p>
+                            <div className="quantity-controls">
                               <span
                                 style={{
                                   fontWeight: "bold",
                                   marginTop: "8px",
-                                  color: "salmon",
+                                  color: "lightSalmon",
                                 }}
                               >
-                                Price: ₹{pizza.price}
+                                Quantity:
                               </span>
-                              &nbsp;&nbsp;&nbsp;&nbsp;
-                              <span
-                                style={{
-                                  fontWeight: "bold",
-                                  marginTop: "8px",
-                                  color: "tomato",
-                                }}
-                              >
-                                Total: ₹{pizza.price * pizza.quantity}{" "}
-                              </span>{" "}
-                              &nbsp;&nbsp;&nbsp;&nbsp;
                               <button
                                 className="btn"
-                                style={{
-                                  border: "none",
-                                  cursor: "pointer",
-                                }}
-                                onClick={() => dispatch(deleteFromCart(pizza))}
+                                style={{ border: "none", cursor: "pointer" }}
+                                onClick={() => decreaseQuantity(pizza)} // Decrease quantity button
                               >
                                 <FontAwesomeIcon
-                                  icon={faTrash}
+                                  icon={faMinusCircle}
                                   style={{
                                     fontSize: "1.2rem",
-                                    color: "#FF4444",
+                                    color: "#FF8888",
                                   }}
                                 />
                               </button>
-                            </p>
+                              <span
+                                className="quantity"
+                                style={{
+                                  fontWeight: "bold",
+                                  marginTop: "8px",
+                                }}
+                              >
+                                {pizza.quantity}
+                              </span>
+                              <button
+                                className="btn"
+                                style={{ border: "none", cursor: "pointer" }}
+                                onClick={() => increaseQuantity(pizza)} // Increase quantity button
+                              >
+                                <FontAwesomeIcon
+                                  icon={faPlusCircle}
+                                  style={{
+                                    fontSize: "1.2rem",
+                                    color: "green",
+                                  }}
+                                />
+                                {/* Adjusted icon size and color */}
+                              </button>{" "}
+                              <p>
+                                <span
+                                  style={{
+                                    fontWeight: "bold",
+                                    marginTop: "8px",
+                                    color: "salmon",
+                                  }}
+                                >
+                                  Price: ₹{pizza.price}
+                                </span>
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <span
+                                  style={{
+                                    fontWeight: "bold",
+                                    marginTop: "8px",
+                                    color: "tomato",
+                                  }}
+                                >
+                                  Total: ₹{pizza.price * pizza.quantity}{" "}
+                                </span>{" "}
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <button
+                                  className="btn"
+                                  style={{
+                                    border: "none",
+                                    cursor: "pointer",
+                                  }}
+                                  onClick={() =>
+                                    dispatch(deleteFromCart(pizza))
+                                  }
+                                >
+                                  <FontAwesomeIcon
+                                    icon={faTrash}
+                                    style={{
+                                      fontSize: "1.2rem",
+                                      color: "#FF4444",
+                                    }}
+                                  />
+                                </button>
+                              </p>
+                            </div>
                           </div>
                         </div>
                       </div>
