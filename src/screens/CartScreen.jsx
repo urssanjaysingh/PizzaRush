@@ -158,7 +158,7 @@ const CartScreen = () => {
                             />
                           </div>
                         </div>
-                        <div className="col-md-7 d-flex">
+                        <div className="col-md-7 d-flex align-items-center">
                           <div
                             className="card-body mt-3"
                             style={{ margin: "auto 0" }}
