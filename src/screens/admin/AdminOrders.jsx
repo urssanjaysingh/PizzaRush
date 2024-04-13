@@ -134,6 +134,7 @@ const AdminOrders = () => {
                               <th scope="col">#</th>
                               <th scope="col">Status</th>
                               <th scope="col">Buyer</th>
+                              <th scope="col">Address</th>
                               <th scope="col">Date</th>
                               <th scope="col">Payment</th>
                               <th scope="col">Amount</th>
@@ -159,6 +160,7 @@ const AdminOrders = () => {
                                 </Select>
                               </td>
                               <td>{o?.buyer?.name}</td>
+                              <td>{o?.buyer?.address}</td>
                               <td>{moment(o?.createdAt).fromNow()}</td>
                               <td>
                                 {o?.payment?.success ? "Success" : "Failed"}
