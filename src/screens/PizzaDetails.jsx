@@ -127,7 +127,10 @@ const PizzaDetails = () => {
                 ) : (
                   <div className="d-flex flex-wrap fade-in justify-content-center">
                     {relatedPizzas?.map((p, i) => (
-                      <div className="card product-card m-2 bg-light">
+                      <div
+                        className="card product-card m-2 bg-light"
+                        style={{ width: "18rem" }}
+                      >
                         <div className="square-container">
                           <img
                             className="card-img-top product-image"
