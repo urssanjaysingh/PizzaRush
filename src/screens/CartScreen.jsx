@@ -133,7 +133,7 @@ const CartScreen = () => {
         </div>
         <div className="row">
           <div className="col-md-8">
-            <div className="column">
+            <div className="row">
               <div className="d-flex flex-wrap fade-in justify-content-center">
                 {cartItems
                   .slice()
@@ -153,7 +153,10 @@ const CartScreen = () => {
                           />
                         </div>
                         <div className="col-md-9 d-flex align-items-center justify-content-center">
-                          <div className="card-body mt-3">
+                          <div
+                            className="card-body mt-3"
+                            style={{ height: "100%" }}
+                          >
                             <p
                               style={{
                                 margin: 0,
