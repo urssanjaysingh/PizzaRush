@@ -141,7 +141,7 @@ const CartScreen = () => {
                     .reverse()
                     .map((pizza, index) => (
                       <div
-                        className="card mb-3 d-flex justify-content-center"
+                        className="card d-flex justify-content-center"
                         style={{ paddingLeft: "5px" }}
                         key={index}
                       >
@@ -154,7 +154,7 @@ const CartScreen = () => {
                             />
                           </div>
                           <div className="col-md-9 d-flex align-items-center justify-content-center">
-                            <div className="card-body mt-3">
+                            <div className="card-body">
                               <p
                                 style={{
                                   margin: 0,
