@@ -17,7 +17,7 @@ const Pizza = ({ pizza }) => {
     <>
       <div
         className="card product-card m-2 bg-light"
-        style={{ width: "18rem" }}
+        style={{ width: "20rem" }}
       >
         <Link to={`/pizza/${pizza._id}`} style={{ textDecoration: "none" }}>
           <div className="square-container">
