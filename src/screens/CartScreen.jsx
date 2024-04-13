@@ -145,7 +145,7 @@ const CartScreen = () => {
                       key={index}
                     >
                       <div className="row">
-                        <div className="col-md-3 d-flex align-items-center justify-content-center">
+                        <div className="col-md-4 d-flex align-items-center justify-content-center">
                           <div
                             className="img-container"
                             style={{ height: "100%", maxWidth: "100%" }}
@@ -158,7 +158,7 @@ const CartScreen = () => {
                             />
                           </div>
                         </div>
-                        <div className="col-md-9 d-flex align-items-center justify-content-center">
+                        <div className="col-md-8 d-flex align-items-center justify-content-center">
                           <div
                             className="card-body mt-3"
                             style={{ height: "100%" }}
