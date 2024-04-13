@@ -133,7 +133,7 @@ const CartScreen = () => {
         </div>
         <div className="row">
           <div className="col-md-8">
-            <div className="row">
+            <div className="column">
               <div className="d-flex flex-wrap fade-in justify-content-center">
                 {cartItems
                   .slice()
@@ -144,7 +144,7 @@ const CartScreen = () => {
                       style={{ paddingLeft: 0 }}
                       key={index}
                     >
-                      <div className="column">
+                      <div className="row">
                         <div className="col-md-3 d-flex align-items-center justify-content-center">
                           <img
                             src={process.env.PUBLIC_URL + pizza.image}
