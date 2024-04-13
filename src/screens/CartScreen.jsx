@@ -149,7 +149,7 @@ const CartScreen = () => {
                           <div className="col-md-3 d-flex align-items-center justify-content-center">
                             <img
                               src={process.env.PUBLIC_URL + pizza.image}
-                              className="img-fluid rounded-start"
+                              className="img-fluid"
                               alt={pizza.name}
                             />
                           </div>
