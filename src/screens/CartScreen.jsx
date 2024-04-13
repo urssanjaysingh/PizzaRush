@@ -141,58 +141,122 @@ const CartScreen = () => {
                     .reverse()
                     .map((pizza, index) => (
                       <div
-                        className="card mb-3 mx-2"
-                        style={{ maxWidth: "540px" }}
+                        className="card mb-3 d-flex justify-content-center"
+                        style={{ paddingLeft: "10px" }}
                         key={index}
                       >
-                        <div className="row g-0">
-                          <div className="col-md-4">
+                        <div className="row">
+                          <div className="col-md-3 d-flex align-items-center justify-content-center">
                             <img
                               src={process.env.PUBLIC_URL + pizza.image}
-                              className="img-fluid rounded-start"
+                              className="img-fluid"
                               alt={pizza.name}
                             />
                           </div>
-                          <div className="col-md-8">
-                            <div className="card-body">
-                              <h5 className="card-title">{pizza.name}</h5>
-                              <p className="card-text product-description">
+                          <div className="col-md-9 d-flex align-items-center justify-content-center">
+                            <div className="card-body mt-3">
+                              <p
+                                style={{
+                                  margin: 0,
+                                  fontWeight: "bold",
+                                  fontSize: "20px",
+                                }}
+                              >
+                                {pizza.name}
+                              </p>
+                              <p
+                                className="product-description"
+                                style={{ textAlign: "justify" }}
+                              >
                                 {pizza.description}
                               </p>
-                              <div className="quantity-controls d-flex align-items-center">
-                                <span className="fw-bold me-3">Quantity:</span>
-                                <button
-                                  className="btn btn-sm btn-outline-danger me-2"
-                                  onClick={() => decreaseQuantity(pizza)}
+                              <div className="quantity-controls">
+                                <span
+                                  style={{
+                                    fontWeight: "bold",
+                                    marginTop: "8px",
+                                    color: "lightSalmon",
+                                  }}
                                 >
-                                  <FontAwesomeIcon icon={faMinusCircle} />
+                                  Quantity:
+                                </span>
+                                <button
+                                  className="btn"
+                                  style={{ border: "none", cursor: "pointer" }}
+                                  onClick={() => decreaseQuantity(pizza)} // Decrease quantity button
+                                >
+                                  <FontAwesomeIcon
+                                    icon={faMinusCircle}
+                                    style={{
+                                      fontSize: "1.2rem",
+                                      color: "#FF8888",
+                                    }}
+                                  />
                                 </button>
-                                <span className="quantity">
+                                <span
+                                  className="quantity"
+                                  style={{
+                                    fontWeight: "bold",
+                                    marginTop: "8px",
+                                  }}
+                                >
                                   {pizza.quantity}
                                 </span>
                                 <button
-                                  className="btn btn-sm btn-outline-success ms-2"
-                                  onClick={() => increaseQuantity(pizza)}
+                                  className="btn"
+                                  style={{ border: "none", cursor: "pointer" }}
+                                  onClick={() => increaseQuantity(pizza)} // Increase quantity button
                                 >
-                                  <FontAwesomeIcon icon={faPlusCircle} />
-                                </button>
-                              </div>
-                              <div className="price-info mt-3">
-                                <p className="mb-1">
-                                  <span className="fw-bold me-2">Price:</span>₹
-                                  {pizza.price}
+                                  <FontAwesomeIcon
+                                    icon={faPlusCircle}
+                                    style={{
+                                      fontSize: "1.2rem",
+                                      color: "green",
+                                    }}
+                                  />
+                                  {/* Adjusted icon size and color */}
+                                </button>{" "}
+                                <p>
+                                  <span
+                                    style={{
+                                      fontWeight: "bold",
+                                      marginTop: "8px",
+                                      color: "salmon",
+                                    }}
+                                  >
+                                    Price: ₹{pizza.price}
+                                  </span>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;
+                                  <span
+                                    style={{
+                                      fontWeight: "bold",
+                                      marginTop: "8px",
+                                      color: "tomato",
+                                    }}
+                                  >
+                                    Total: ₹{pizza.price * pizza.quantity}{" "}
+                                  </span>{" "}
+                                  &nbsp;&nbsp;&nbsp;&nbsp;
+                                  <button
+                                    className="btn"
+                                    style={{
+                                      border: "none",
+                                      cursor: "pointer",
+                                    }}
+                                    onClick={() =>
+                                      dispatch(deleteFromCart(pizza))
+                                    }
+                                  >
+                                    <FontAwesomeIcon
+                                      icon={faTrash}
+                                      style={{
+                                        fontSize: "1.2rem",
+                                        color: "#FF4444",
+                                      }}
+                                    />
+                                  </button>
                                 </p>
-                                <p className="mb-0">
-                                  <span className="fw-bold me-2">Total:</span>₹
-                                  {pizza.price * pizza.quantity}
-                                </p>
                               </div>
-                              <button
-                                className="btn btn-sm btn-outline-danger mt-2"
-                                onClick={() => dispatch(deleteFromCart(pizza))}
-                              >
-                                <FontAwesomeIcon icon={faTrash} /> Remove
-                              </button>
                             </div>
                           </div>
                         </div>
