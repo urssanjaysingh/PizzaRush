@@ -16,7 +16,7 @@ const Pizza = ({ pizza }) => {
   return (
     <>
       <div
-        className="card product-card m-2 bg-light"
+        className="card product-card m-2 mb-4 bg-light"
         style={{ width: "18.5rem" }}
       >
         <Link to={`/pizza/${pizza._id}`} style={{ textDecoration: "none" }}>
