@@ -74,7 +74,7 @@ const HomeScreen = () => {
                     <h1 className="text-uppercase fw-bold text-white mb-3">
                       Welcome to Pizzarush
                     </h1>
-                    <p className="mb-4" style={{ textAlign: "justify" }}>
+                    <p className="mb-4" style={{ textAlign: "center" }}>
                       Indulge in a delightful culinary journey with PizzaRush!
                       Satisfy your pizza cravings with our mouthwatering
                       selection of artisanal pizzas crafted with the finest
