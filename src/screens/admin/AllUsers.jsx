@@ -41,6 +41,7 @@ const AllUsers = () => {
     setDeleteTarget(null);
   };
 
+  // Delete user by it's id
   const handleDeleteConfirm = async (confirmed) => {
     if (deleteTarget && confirmed) {
       try {
