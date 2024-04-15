@@ -15,7 +15,10 @@ const Pizza = ({ pizza }) => {
 
   return (
     <>
-      <div className="card product-card bg-light" style={{ width: "18rem" }}>
+      <div
+        className="card product-card m-2 bg-light"
+        style={{ width: "18rem" }}
+      >
         <Link to={`/pizza/${pizza._id}`} style={{ textDecoration: "none" }}>
           <div className="square-container">
             <Suspense fallback={<div>Loading...</div>}>

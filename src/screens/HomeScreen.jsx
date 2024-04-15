@@ -115,7 +115,7 @@ const HomeScreen = () => {
           ) : pizzas.length ? (
             <Suspense fallback={<div>Loading...</div>}>
               {pizzas.map((pizza) => (
-                <div key={pizza.id} className="col-sm-6 col-md-4 col-lg-3 p-2">
+                <div key={pizza.id}>
                   <Pizza pizza={pizza} />
                 </div>
               ))}
