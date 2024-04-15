@@ -26,7 +26,7 @@ Layout.defaultProps = {
   title: "PizzaRush - Pizza Delivery Application",
   description:
     "Indulge in a delightful culinary journey with PizzaRush! Satisfy your pizza cravings with our mouthwatering selection of artisanal pizzas crafted with the finest ingredients. With our user-friendly ordering platform and efficient delivery service, you can order with confidence at PizzaRush, your go-to pizza destination for every occasion.",
-  keywords: "mern, react, node, mongodb",
+  keywords: "pizzarush, pizza, delivery, food, mern, react, node, mongodb",
   author: "Sanjay Singh",
 };
 
