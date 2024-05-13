@@ -28,8 +28,6 @@ Feel free to explore, contribute, or report issues!
 
 💳 **Payment Integration**: Enjoy secure payments with braintree integration, including a test mode for stress-free transactions.
 
-📊 **Order Management**: Streamline order processing with automatic stock updates and admin notifications.
-
 🎉 **Admin Dashboard**: Effortlessly manage pizzas, update details, view user info, and track order statuses.
 
 🔑 **Forgot Password and OTP**: Securely reset passwords using the forgot password functionality, with OTP sent to your email.
