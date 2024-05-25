@@ -45,6 +45,7 @@ const CartScreen = () => {
     if (pizza.quantity < 10) {
       // Check if quantity is less than 10
       updateQuantity(pizza, pizza.quantity + 1);
+      toast.success("Pizza Quantity Updated!");
     } else {
       toast.info("Maximum quantity reached");
     }
@@ -53,6 +54,7 @@ const CartScreen = () => {
   const decreaseQuantity = (pizza) => {
     if (pizza.quantity > 1) {
       updateQuantity(pizza, pizza.quantity - 1);
+      toast.success("Pizza Quantity Updated!");
     }
   };
 
