@@ -55,6 +55,13 @@ const CustomPizzaModal = ({ show, handleClose, customPizzaData }) => {
 
     // Dispatch action to add to cart
     dispatch(addToCart(customPizza));
+
+    // Reset all fields
+    setPizzaBase("");
+    setPizzaSauce("");
+    setCheeseType("");
+    setSelectedVeggies([]);
+
     // Close the modal
     handleClose();
   };
