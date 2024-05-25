@@ -1,6 +1,6 @@
 # PizzaRush: Order Your Perfect Pizza!
 
-Welcome to PizzaRush, where ordering your favorite pizzas is a breeze! Dive into a world of delicious flavors and convenient ordering, all at your fingertips. Whether you're a fan of classic margheritas or love to craft your own culinary masterpiece, PizzaRush has everything you need to satisfy your pizza cravings.
+Welcome! to PizzaRush, where ordering your favorite pizzas is a breeze! Dive into a world of delicious flavors and convenient ordering, all at your fingertips. Whether you're a fan of classic margheritas or love to craft your own culinary masterpiece, PizzaRush has everything you need to satisfy your pizza cravings.
 
 ## 🍕 Explore PizzaRush
 
