@@ -187,7 +187,7 @@ const PizzaDetails = () => {
         <Offcanvas.Body>
           {selectedPizza && (
             <>
-              <div className="square-container">
+              <div className="square-container canvas">
                 <img
                   className="card-img-top product-image"
                   src={selectedPizza.image}
