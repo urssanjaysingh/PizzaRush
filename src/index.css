@@ -131,20 +131,20 @@ body {
   object-fit: cover;
 }
 
-.canvas {
-  -webkit-overflow-scrolling: touch;
-  overflow: hidden;
+.custom-offcanvas-body {
+  overflow: auto;
+}
+
+.custom-offcanvas-body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.custom-offcanvas-body {
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
   scrollbar-width: none;
-}
-
-.canvas::-webkit-scrollbar {
-  display: none;
-}
-
-@supports (-ms-overflow-style: none) {
-  .canvas {
-    -ms-overflow-style: none;
-  }
+  /* Firefox */
 }
 
 .product-image {

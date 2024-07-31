@@ -184,10 +184,10 @@ const PizzaDetails = () => {
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>About</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>
+        <Offcanvas.Body className="custom-offcanvas-body">
           {selectedPizza && (
             <>
-              <div className="square-container canvas">
+              <div className="square-container">
                 <img
                   className="card-img-top product-image"
                   src={selectedPizza.image}
